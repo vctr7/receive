@@ -8,6 +8,8 @@ import Navigator from "./components/Navigator"
 import Products from "./components/Products";
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
+
+import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
 import "./components/Advertisement.css";
 
@@ -172,6 +174,8 @@ class App extends Component {
           updateQuantity={this.updateQuantity}
           productQuantity={this.state.moq}
         />
+        <Navigator className="Navig"/>
+        <Advertisement className="AD"/>
         
         <Products
           productsList={this.state.products}

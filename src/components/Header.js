@@ -4,9 +4,7 @@ import Counter from "./Counter";
 import EmptyCart from "../empty-states/EmptyCart";
 import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import { findDOMNode } from "react-dom";
-import Navigator from "./Navigator"
-import Advertisement from "./Advertisement"
-import 'react-slideshow-image/dist/styles.css'
+
 
 class Header extends Component {
   constructor(props) {
@@ -225,8 +223,8 @@ class Header extends Component {
             </div>
           </div>
         </div>
-        <Navigator className="Navig"/>
-        <Advertisement className="AD"/>
+        {/* <Navigator className="Navig"/>
+        <Advertisement className="AD"/> */}
       </header>
     );
   }
