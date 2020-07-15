@@ -1,2 +1,12 @@
-node_modules
-node_modules
+# Stylesheets
+.sass-cache/
+*.css.map
+
+# Node Modules
+node_modules/
+
+# JS Mapping files
+*.js.map
+
+# Misc
+.DS_Store
