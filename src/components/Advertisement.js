@@ -24,19 +24,15 @@ const Advertisement = () => {
         <Fade {...properties}>
           <div className="each-fade">
             <img src={Images[0]} alt="test"/>
-            {/* <h2>First Slide</h2> */}
           </div>
           <div className="each-fade">
-            {/* <h2>Second Slide</h2> */}
             <img src={Images[1]} alt="test"/>
           </div>
           <div className="each-fade">
             <img src={Images[2]} alt="test"/>
-            {/* <h2>Third Slide</h2> */}
           </div>
           <div className="each-fade">
             <img src={Images[3]} alt="test"/>
-            {/* <h2>Third Slide</h2> */}
           </div>
         </Fade>
       </div>
