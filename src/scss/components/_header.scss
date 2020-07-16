@@ -360,63 +360,66 @@ header {
 
 /* Navigator */
 nav {
+  width: 122;
+  height: 400;
+  border: 0.01px solid black;
   margin-top: 50px;
   margin-left: 150px;
 }
 
-.nav_container{
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  /* margin: 50px; */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  background-color: white;
-  list-style-type: none;
-}
+// .nav_container{
+//   text-align: center;
+//   display: flex;
+//   flex-direction: row;
+//   width: 50%;
+//   /* margin: 50px; */
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 0;
+//   background-color: white;
+//   list-style-type: none;
+// }
 
-.nav_item{
-  padding: 10px;
-  cursor: pointer;
-}
+// .nav_item{
+//   padding: 10px;
+//   cursor: pointer;
+// }
 
-.nav_item a{
-  text-decoration: none;
-  color: black;
-}
+// .nav_item a{
+//   text-decoration: none;
+//   color: black;
+// }
 
-.nav_item ul {
-  position: absolute;
-  width : 600px;
-  height: 300px;;
-  margin-left: 100px;
-  margin-top: 0px;
-  border-collapse: collapse;
-  border: 1px solid black;
-  color :white;
-    /*클래스 이름이 .subMenu 인 것을 감춘다.*/
-}
-.nav_item > ul{
-  display: none;
-}
+// .nav_item ul {
+//   position: absolute;
+//   width : 600px;
+//   height: 300px;;
+//   margin-left: 100px;
+//   margin-top: 0px;
+//   border-collapse: collapse;
+//   border: 1px solid black;
+//   color :white;
+//     /*클래스 이름이 .subMenu 인 것을 감춘다.*/
+// }
+// .nav_item > ul{
+//   display: none;
+// }
 
-.nav_item:hover > ul {
-  display: block;
-}
-.nav_item ul li {
-  padding: 5px;
-  border-collapse: collapse;
-  background: white;
-  color: black;
-  float: left;
-}
+// .nav_item:hover > ul {
+//   display: block;
+// }
+// .nav_item ul li {
+//   padding: 5px;
+//   border-collapse: collapse;
+//   background: white;
+//   color: black;
+//   float: left;
+// }
 
 /*클래스 이름인 .subMenu에 속하는 td의 상태가 hover일때*/
-.nav_item ul li:hover {
-  background: #ffceb2;
-}
+// .nav_item ul li:hover {
+//   background: #ffceb2;
+// }
 
 // .slide-container{
 //   .each-fade{
@@ -429,3 +432,151 @@ nav {
 //     margin-right: auto;
 //   }
 // }
+
+
+.view_list{
+  .category{
+    margin: 10;
+  }
+  a{
+    color: black;
+  }
+  .category_wrap{
+    margin-left: 120;
+    display: none;
+    border: 0.01px solid black;
+  }
+  .menu_txt{
+    
+    ul{
+      margin: 5px;
+    }
+    float: left;
+    margin: 5px;
+    width: 150;
+    height: 300;
+    border: 0.01px solid black;
+  }
+  .view_item01{
+    margin-top: 10;
+    
+    .category_wrap{
+      width: 800;
+      height: 313;
+    }
+  }.view_item01:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item02{
+    .category_wrap{
+      width: 800;
+      height: 623;
+    }
+  }.view_item02:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item03{
+    .category_wrap{
+      width: 800;
+      height: 313;
+    }
+  }.view_item03:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item04{
+    .category_wrap{
+      width: 800;
+      height: 623;
+    }
+  }.view_item04:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item05{
+    .category_wrap{
+      width: 800;
+      height: 313;
+    }
+  }.view_item05:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item06{
+    .category_wrap{
+      width: 800;
+      height: 313;
+    }
+  }.view_item06:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item07{
+    .category_wrap{
+      width: 800;
+      height: 313;
+    }
+  }.view_item07:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item08{
+    .category_wrap{
+      width: 900;
+      height: 623;
+    }
+  }.view_item08:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item09{
+    .category_wrap{
+      width: 800;
+      height: 313;
+    }
+  }.view_item09:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item10{
+    .category_wrap{
+      width: 900;
+      height: 623;
+    }
+  }.view_item10:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+  
+  .view_item11{
+    .category_wrap{
+      width: 800;
+      height: 623;
+    }
+  }.view_item11:hover{
+    .category_wrap{
+      display: block;
+    }
+  }
+}

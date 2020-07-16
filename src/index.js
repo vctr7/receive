@@ -174,12 +174,12 @@ class App extends Component {
           updateQuantity={this.updateQuantity}
           productQuantity={this.state.moq}
         />
-        {/* <div> */}
-          <Navigator className="Navig"/>
-          <Advertisement className="AD"/>
+        <div>
+          <Navigator />
+          
+        </div>
+        <Advertisement className="AD"/>
           <hr/>
-        {/* </div> */}
-
         <div>
           <h3>Hot</h3>
           <Products
