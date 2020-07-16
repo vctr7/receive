@@ -1,7 +1,7 @@
 {
-  "name": "react-shopping-cart",
-  "version": "0.1.0",
-  "description": "Simple react shopping cart without using redux",
+  "name": "react-price-comparison",
+  "version": "1.0.0",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --config=config/webpack.dev.js",
@@ -9,11 +9,10 @@
   },
   "keywords": [
     "reactjs",
-    "shopping",
-    "cart"
+    "shopping"
   ],
-  "author": "Sivadass",
-  "license": "ISC",
+  "author": "VCTR",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.16.1",
     "prop-types": "^15.5.10",

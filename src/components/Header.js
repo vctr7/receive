@@ -115,7 +115,7 @@ class Header extends Component {
         <div className="container">
           <div className="brand">
             <h1>
-              RECIEVE
+              RECEIVE
             </h1>
             {/* <img
               className="logo"

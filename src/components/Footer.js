@@ -11,20 +11,20 @@ const Footer = props => {
           View Source on Github
         </a>
         <span> / </span>
-        <a href="mailto:contact@sivadass.in" target="_blank">
+        <a href="" target="_blank">
           Need any help?
         </a>
         <span> / </span>
-        <a href="https://twitter.com/NSivadass" target="_blank">
+        <a href="" target="_blank">
           Say Hi on Twitter
         </a>
         <span> / </span>
-        <a href="https://sivadass.in" target="_blank">
+        <a href="" target="_blank">
           Read My Blog
         </a>
       </p>
       <p>
-        &copy; 2020 <strong>RECIEVE</strong> - Your Price
+        &copy; 2020 <strong>RECEIVE</strong> - Your Price
       </p>
     </footer>
   );
