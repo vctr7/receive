@@ -1,11 +1,14 @@
 .slide-container{
-    .each-fade{
-      display: flex;
-      text-align: center;
-    }
-    .each-fade img {
-      width: 40%;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  // position: absolute;
+  // top: 300px;
+
+  .each-fade{
+    display: flex;
+    text-align: center;
   }
+  .each-fade img {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

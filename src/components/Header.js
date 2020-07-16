@@ -223,8 +223,6 @@ class Header extends Component {
             </div>
           </div>
         </div>
-        {/* <Navigator className="Navig"/>
-        <Advertisement className="AD"/> */}
       </header>
     );
   }

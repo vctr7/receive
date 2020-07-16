@@ -11,7 +11,7 @@ import QuickView from "./components/QuickView";
 
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
-import "./components/Advertisement.css";
+
 
 class App extends Component {
   constructor() {
@@ -174,17 +174,23 @@ class App extends Component {
           updateQuantity={this.updateQuantity}
           productQuantity={this.state.moq}
         />
-        <Navigator className="Navig"/>
-        <Advertisement className="AD"/>
-        
-        <Products
-          productsList={this.state.products}
-          searchTerm={this.state.term}
-          addToCart={this.handleAddToCart}
-          productQuantity={this.state.quantity}
-          updateQuantity={this.updateQuantity}
-          openModal={this.openModal}
-        />
+        {/* <div> */}
+          <Navigator className="Navig"/>
+          <Advertisement className="AD"/>
+          <hr/>
+        {/* </div> */}
+
+        <div>
+          <h3>Hot</h3>
+          <Products
+            productsList={this.state.products}
+            searchTerm={this.state.term}
+            addToCart={this.handleAddToCart}
+            productQuantity={this.state.quantity}
+            updateQuantity={this.updateQuantity}
+            openModal={this.openModal}
+          />
+        </div>
         <Footer />
         <QuickView
           product={this.state.quickViewProduct}

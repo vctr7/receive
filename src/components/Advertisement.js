@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
-import './Advertisement.css'
+// import './Advertisement.css'
 
 const Images = [
   'https://react-slideshow.herokuapp.com/assets/images/slide_7.jpg',

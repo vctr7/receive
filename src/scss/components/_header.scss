@@ -387,6 +387,37 @@ nav {
   color: black;
 }
 
+.nav_item ul {
+  position: absolute;
+  width : 600px;
+  height: 300px;;
+  margin-left: 100px;
+  margin-top: 0px;
+  border-collapse: collapse;
+  border: 1px solid black;
+  color :white;
+    /*클래스 이름이 .subMenu 인 것을 감춘다.*/
+}
+.nav_item > ul{
+  display: none;
+}
+
+.nav_item:hover > ul {
+  display: block;
+}
+.nav_item ul li {
+  padding: 5px;
+  border-collapse: collapse;
+  background: white;
+  color: black;
+  float: left;
+}
+
+/*클래스 이름인 .subMenu에 속하는 td의 상태가 hover일때*/
+.nav_item ul li:hover {
+  background: #ffceb2;
+}
+
 // .slide-container{
 //   .each-fade{
 //     // display: flex;
