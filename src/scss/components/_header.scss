@@ -442,12 +442,12 @@ nav {
     color: black;
   }
   .category_wrap{
+    position: absolute;
     margin-left: 120;
     display: none;
     border: 0.01px solid black;
   }
   .menu_txt{
-    
     ul{
       margin: 5px;
     }
@@ -458,9 +458,9 @@ nav {
     border: 0.01px solid black;
   }
   .view_item01{
-    margin-top: 10;
-    
+
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 313;
     }
@@ -472,6 +472,7 @@ nav {
   
   .view_item02{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 623;
     }
@@ -483,6 +484,7 @@ nav {
   
   .view_item03{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 313;
     }
@@ -494,6 +496,7 @@ nav {
   
   .view_item04{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 623;
     }
@@ -505,6 +508,7 @@ nav {
   
   .view_item05{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 313;
     }
@@ -516,6 +520,7 @@ nav {
   
   .view_item06{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 313;
     }
@@ -527,6 +532,7 @@ nav {
   
   .view_item07{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 313;
     }
@@ -538,6 +544,7 @@ nav {
   
   .view_item08{
     .category_wrap{
+      top: 148px;
       width: 900;
       height: 623;
     }
@@ -549,6 +556,7 @@ nav {
   
   .view_item09{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 313;
     }
@@ -560,6 +568,7 @@ nav {
   
   .view_item10{
     .category_wrap{
+      top: 148px;
       width: 900;
       height: 623;
     }
@@ -571,6 +580,7 @@ nav {
   
   .view_item11{
     .category_wrap{
+      top: 148px;
       width: 800;
       height: 623;
     }

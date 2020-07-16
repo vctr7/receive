@@ -153,7 +153,7 @@ class Navigator extends React.Component{
                             <a href="/estore/kr/ko/c/2" className="category">메이크업</a>                        
                             <div className="category_wrap ">
                             {/* " */}
-                                <div className="clear_both category_list">
+                                <div className="clear_both_category_list">
                                 {/* " */}
                                     <div className="menu_txt ">
                                         <p><a href="/estore/kr/ko/c/16">베이스</a></p>
@@ -326,7 +326,7 @@ class Navigator extends React.Component{
                             <a href="/estore/kr/ko/c/3" className="category">향수/바디/헤어</a>
                             <div className="category_wrap line01">
                             {/* style="display: none;" */}
-                                <div className="clear_both category_list">
+                                <div className="clear_both_category_list">
                                 {/* style="display: none;" */}
                                     <div className="menu_txt ">
                                         <p><a href="/estore/kr/ko/c/24">향수</a></p>

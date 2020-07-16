@@ -176,10 +176,10 @@ class App extends Component {
         />
         <div>
           <Navigator />
-          
-        </div>
-        <Advertisement className="AD"/>
+          <Advertisement className="AD"/>
           <hr/>
+        </div>
+        
         <div>
           <h3>Hot</h3>
           <Products
