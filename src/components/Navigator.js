@@ -1,13 +1,16 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
+
 
 class Navigator extends React.Component{
     render(){
         return(
-            <div className="category_view new_category_view">
+            <div className="category_index">
                 <nav>
                 <ul className="view_list">
                         <li className="view_item01">
                             <a href="/estore/kr/ko/c/1" className="category">스킨케어</a>
+                            {/* <Route path="/estore/kr/ko/c/1" className="category" component={스킨케어} /> */}
                             <div className="category_wrap line01">
                             {/* " */}
                                 <div className="clear_both_category_list">
