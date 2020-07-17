@@ -37,11 +37,16 @@ header {
   }
 }
 // Logo
-.brand .logo {
+.brand {
+  h1 {
+    color: black;
+  }
+  .logo {
   width: 123px;
   @media (max-width: 480px) {
     width: 102px;
     margin: 2px 0;
+    }
   }
 }
 

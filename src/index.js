@@ -214,16 +214,11 @@ class Index extends React.Component{
   render(){
     return(
       <BrowserRouter>
-        <div>
-          <Route path="/" component={App} exact/>
-          <Route paht="/itemdetail" component={ItemDetail}/>
-        </div>
+        <App/>
       </BrowserRouter>
       
     )
   }
 }
-
-
 
 ReactDOM.render(<Index />, document.getElementById("root"));

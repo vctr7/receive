@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import CartScrollBar from "./CartScrollBar";
 import Counter from "./Counter";
 import EmptyCart from "../empty-states/EmptyCart";
@@ -114,9 +115,12 @@ class Header extends Component {
       <header>
         <div className="container">
           <div className="brand">
-            <h1>
+            <Link to="/">
+              <h1>
               RECEIVE
-            </h1>
+              </h1>
+            </Link>
+            
             {/* <img
               className="logo"
               src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png"

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import {Route, Link} from 'react-router-dom';
-import {BrowserRouter} from 'react-router-dom';
 import axios from "axios";
 import Header from "./components/Header";
 import Advertisement from "./components/Advertisement"
@@ -10,6 +9,7 @@ import Products from "./components/Products";
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
 import ItemDetail from "./page/ItemDetail";
+import DiscountInfo from "./page/DiscountInfo";
 
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
@@ -184,6 +184,7 @@ class App extends Component {
         
         
         <div>
+            <Route path="/" exact>
               <h3>Hot</h3>
               <Products
               productsList={this.state.products}
@@ -193,7 +194,9 @@ class App extends Component {
               updateQuantity={this.updateQuantity}
               openModal={this.openModal}
               />
-          <Route path='/itemdetail' component={ItemDetail}/>
+            </Route>
+            <Route path='/itemdetail' component={ItemDetail}/>
+            <Route path="/discount_info" component={DiscountInfo}/>
         </div>
         
         <Footer />
@@ -203,9 +206,8 @@ class App extends Component {
           closeModal={this.closeModal}
         />
       </div>
-
     );
-  }
-}
+  };
+};
 
 export default App;
