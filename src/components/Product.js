@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
 import {Route, Link} from 'react-router-dom';
-import Image from './Image';
-import ItemDetail from '../page/ItemDetail'
+
+
 
 
 class Product extends Component {
@@ -108,7 +108,6 @@ class Product extends Component {
               </button>
           </div>
         </div>
-        {/* <Route path='/itemdetail' component={ItemDetail}  /> */}
       </div>
     );
   }

@@ -120,12 +120,6 @@ class Header extends Component {
               RECEIVE
               </h1>
             </Link>
-            
-            {/* <img
-              className="logo"
-              src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png"
-              alt="Veggy Brand Logo"
-            /> */}
           </div>
 
           <div className="search">

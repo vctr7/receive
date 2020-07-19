@@ -10,11 +10,8 @@ class Navigator extends React.Component{
                 <ul className="view_list">
                         <li className="view_item01">
                             <a href="/estore/kr/ko/c/1" className="category">스킨케어</a>
-                            {/* <Route path="/estore/kr/ko/c/1" className="category" component={스킨케어} /> */}
                             <div className="category_wrap line01">
-                            {/* " */}
                                 <div className="clear_both_category_list">
-                                {/* " */}
                                     <div className="menu_txt">
                                         <p><a href="">기초케어</a></p>
                                         <ul>
@@ -145,19 +142,15 @@ class Navigator extends React.Component{
                                                     </div>
                                                 </a>
                                             </li>
-                                        
                                     </ul>
                                 </div>
-                                
                             </div>
                         </li>
                     
                         <li className="view_item02">
                             <a href="/estore/kr/ko/c/2" className="category">메이크업</a>                        
                             <div className="category_wrap ">
-                            {/* " */}
                                 <div className="clear_both_category_list">
-                                {/* " */}
                                     <div className="menu_txt ">
                                         <p><a href="/estore/kr/ko/c/16">베이스</a></p>
                                         <ul>

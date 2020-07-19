@@ -177,25 +177,22 @@ class App extends Component {
           productQuantity={this.state.moq}
         />
         <div>
-          <Navigator />
-          <Advertisement className="AD"/>
-          <hr/>
-        </div>
-        
-        
-        <div>
-            <Route path="/" exact>
-              <h3>Hot</h3>
-              <Products
-              productsList={this.state.products}
-              searchTerm={this.state.term}
-              addToCart={this.handleAddToCart}
-              productQuantity={this.state.quantity}
-              updateQuantity={this.updateQuantity}
-              openModal={this.openModal}
-              />
-            </Route>
+          <Route path="/" exact>
+            <Navigator />
+            <Advertisement className="AD"/>
+            <hr/>
+                <h3>Hot</h3>
+                <Products
+                productsList={this.state.products}
+                searchTerm={this.state.term}
+                addToCart={this.handleAddToCart}
+                productQuantity={this.state.quantity}
+                updateQuantity={this.updateQuantity}
+                openModal={this.openModal}
+                />
+          </Route>
             <Route path='/itemdetail' component={ItemDetail}/>
+            
             <Route path="/discount_info" component={DiscountInfo}/>
         </div>
         
