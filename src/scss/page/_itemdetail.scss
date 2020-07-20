@@ -6,7 +6,7 @@
         text-align: center;
     }
     .category_upper{
-        width: 122;
+        width: 123;
         margin-left: 300;
         border:1px solid black;
     }
@@ -24,14 +24,6 @@
     }
 }
 
-// .itemDetail_category:hover{
-//     .category_{
-//         display: block;
-//     }
-// }
-
-
-
 .itemDetail_item_info{
     
 
@@ -43,4 +35,11 @@
     .itemDetail_img{
         text-align: center;
     }
+
+    .itemDetail_discount_info{
+        margin: auto;
+        border: 1px solid black;
+        width: 220;
+    }
 }
+
