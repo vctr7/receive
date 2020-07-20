@@ -7,7 +7,7 @@ class Navigator extends React.Component{
         return(
             <div className="category_index">
                 <nav>
-                <ul className="view_list">
+                   <ul className="view_list">
                         <li className="view_item01">
                             <a href="/estore/kr/ko/c/1" className="category">스킨케어</a>
                             <div className="category_wrap line01">
@@ -1742,8 +1742,6 @@ class Navigator extends React.Component{
                 <a href="#" className="btn_close"><span className="blind">닫기</span></a>
                 </nav>
             </div>
-
-
         );
     };
 }

@@ -364,19 +364,23 @@ header {
 }
 
 /* Navigator */
-nav {
+.mainpage_nav{
+  margin-left: 300;
+}
+
+nav{
   position: absolute;
   z-index: 2;
   width: 122;
   height: 400;
   background-color: lightgray;
   opacity: 0.7;
-  margin-left: 300;
+  // margin-left: 300;
 }
 
 .view_list{
+  opacity: 1;
   .category{
-    // opacity: 0.7;
     margin: 10;
   }
   a{

@@ -220,6 +220,10 @@ class Header extends Component {
               </div>
             </div>
           </div>
+          
+          <div className="Login">
+            <Link to="login">로그인</Link>
+          </div>
         </div>
       </header>
     );

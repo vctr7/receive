@@ -1,0 +1,46 @@
+
+.itemDetail_category{
+    height: 130;
+
+    h3 {
+        text-align: center;
+    }
+    .category_upper{
+        width: 122;
+        margin-left: 300;
+        border:1px solid black;
+    }
+
+    .category_{
+        display: none;
+        .navig{
+            position: absolute;
+        }
+    }
+}
+.category_upper:hover{
+    .category_{
+        display: block;
+    }
+}
+
+// .itemDetail_category:hover{
+//     .category_{
+//         display: block;
+//     }
+// }
+
+
+
+.itemDetail_item_info{
+    
+
+    margin: auto;
+    width: 800;
+    height: 800;
+    // border: 1px solid black;
+    text-align: center; 
+    .itemDetail_img{
+        text-align: center;
+    }
+}

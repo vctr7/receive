@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
 import ItemDetail from "./page/ItemDetail";
 import DiscountInfo from "./page/DiscountInfo";
+import Login from "./page/Login"
 
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
@@ -178,7 +179,9 @@ class App extends Component {
         />
         <div>
           <Route path="/" exact>
-            <Navigator />
+            <div className="mainpage_nav">
+              <Navigator />
+            </div>
             <Advertisement className="AD"/>
             <hr/>
                 <h3>Hot</h3>
@@ -191,9 +194,9 @@ class App extends Component {
                 openModal={this.openModal}
                 />
           </Route>
-            <Route path='/itemdetail' component={ItemDetail}/>
-            
-            <Route path="/discount_info" component={DiscountInfo}/>
+          <Route path='/itemdetail' component={ItemDetail}/>
+          <Route path="/discount_info" component={DiscountInfo}/>
+          <Route path="/login" component={Login}/>
         </div>
         
         <Footer />
