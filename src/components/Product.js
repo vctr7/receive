@@ -3,8 +3,6 @@ import Counter from "./Counter";
 import {Route, Link} from 'react-router-dom';
 
 
-
-
 class Product extends Component {
   constructor(props) {
     super(props);

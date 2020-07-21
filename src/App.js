@@ -14,6 +14,8 @@ import Login from "./page/Login";
 import MyPage from "./page/MyPage";
 import SignIn from "./page/SignIn";
 
+import parfum from "./components/parfum.json"
+
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
 
@@ -48,12 +50,16 @@ class App extends Component {
   }
   // Fetch Initial Set of Products from external API
   getProducts() {
-    let url =
-      "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
-    axios.get(url).then(response => {
-      this.setState({
-        products: response.data
-      });
+    // let url =
+    //   "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
+    // axios.get(url).then(response => {
+    //   this.setState({
+    //     products: response.data
+    //   });
+    // });
+    this.setState({
+      products: parfum
+        
     });
   }
   componentWillMount() {
@@ -196,6 +202,8 @@ class App extends Component {
                 updateQuantity={this.updateQuantity}
                 openModal={this.openModal}
                 />
+                {/* console.log({this.state.products}); */}
+
           </Route>
           <Route path='/itemdetail' component={ItemDetail}/>
           <Route path="/discount_info" component={DiscountInfo}/>

@@ -23,11 +23,17 @@ class Products extends Component {
       .map(product => {
         return (
           <Product
-            key={product.id}
-            price={product.price}
+            // key={product.id}
+            // price={product.price}
+            // name={product.name}
+            // image={product.image}
+            // id={product.id}
+            key={product.prdNo}
+            price={product.priceUSD}
             name={product.name}
-            image={product.image}
-            id={product.id}
+            image={product.imgSrc}
+            id={product.prdNo}
+
             addToCart={this.props.addToCart}
             productQuantity={this.props.productQuantity}
             updateQuantity={this.props.updateQuantity}
