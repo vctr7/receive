@@ -220,9 +220,18 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          
-          <div className="Login">
-            <Link to="login">로그인</Link>
+          <div className="Header_function">
+            <div className="Login">
+              <Link to="login">로그인</Link>
+            </div>
+
+            <div className="SignIn">
+              <Link to="signin">회원가입</Link>
+            </div>
+
+            <div className="MyPage">
+              <Link to="mypage">마이페이지</Link>
+            </div>
           </div>
         </div>
       </header>

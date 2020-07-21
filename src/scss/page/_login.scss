@@ -1,0 +1,27 @@
+.login_page{
+    h2{
+        margin-top:40;
+    }
+    text-align: center;
+    margin: auto;
+    height: 600;
+    width: 600;
+    .login_module{
+        margin-top: 100;
+        height: 200;
+
+        .id{
+            height:40;
+            width: 300;
+        }
+        .password{
+            margin-top:10;
+            height:40;
+            width: 300;
+        }
+        .login_button{
+            height:40;
+            width: 300;
+        }
+    }
+}

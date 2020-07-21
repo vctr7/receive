@@ -14,14 +14,15 @@
   "author": "VCTR",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.18.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-custom-scrollbars": "^4.1.1",
     "react-dom": "^16.0.0",
     "react-router-dom": "^5.2.0",
     "react-slideshow-image": "^2.0.2",
-    "react-transition-group": "^1.1.2"
+    "react-transition-group": "^1.1.2",
+    "js-yaml": ">=3.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",

@@ -41,12 +41,23 @@ class ItemDetail extends React.Component{
                         </div>
                         <br/>
                         <br/>
-                        <h3> PRICE: 50,000₩   </h3>
+                        <h3>최저가: 50,000₩</h3>
                         <br/>
                         <div className="itemDetail_discount_info">
                             <Link to="discount_info">
                                 <h3>DISCOUNT INFO</h3>
                             </Link>
+                        </div>
+
+                        <div className="itemDetail_comparison">
+                            <div>
+                                <ul>
+                                    <li>신라</li>
+                                    <li>롯데</li>
+                                    <li>신세계</li>
+                                </ul>
+                            </div>
+
                         </div>
 
                     </div>
