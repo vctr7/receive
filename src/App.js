@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Advertisement from "./components/Advertisement"
 import Navigator from "./components/Navigator"
 import Products from "./components/Products";
+import Product from "./components/Product"
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
 import ItemDetail from "./page/ItemDetail";
@@ -18,6 +19,7 @@ import parfum from "./components/parfum.json"
 
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
+import { data } from "autoprefixer";
 
 
 
@@ -34,7 +36,11 @@ class App extends Component {
       cartBounce: false,
       quantity: 1,
       quickViewProduct: {},
-      modalActive: false
+      modalActive: false,
+      p_imgurl: "https://danielledeepsea.files.wordpress.com/2018/03/false-2061132_960_720.png",
+      p_brand: "None",
+      p_name: "None",
+      p_price: "0$"
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleMobileSearch = this.handleMobileSearch.bind(this);
@@ -169,6 +175,14 @@ class App extends Component {
       modalActive: false
     });
   }
+  appCallback = (dataFromProducts) => {
+    this.setState({
+      p_imgurl: dataFromProducts["image"],
+      p_brand: dataFromProducts["brand"],
+      p_name: dataFromProducts["name"],
+      p_price:dataFromProducts["price"]
+    })
+  }
 
   render() {
     return (
@@ -195,6 +209,7 @@ class App extends Component {
             <hr/>
                 <h3>Hot</h3>
                 <Products
+                callbackFromApp={this.appCallback}
                 productsList={this.state.products}
                 searchTerm={this.state.term}
                 addToCart={this.handleAddToCart}
@@ -202,10 +217,16 @@ class App extends Component {
                 updateQuantity={this.updateQuantity}
                 openModal={this.openModal}
                 />
-                {/* console.log({this.state.products}); */}
 
           </Route>
-          <Route path='/itemdetail' component={ItemDetail}/>
+          <Route path='/itemdetail'>
+            <ItemDetail
+            img_url={this.state.p_imgurl}
+            brand={this.state.p_brand}
+            name={this.state.p_name}
+            price={this.state.p_price}
+            />
+          </Route>
           <Route path="/discount_info" component={DiscountInfo}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/login" component={Login}/>

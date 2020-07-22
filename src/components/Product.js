@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
 import {Route, Link} from 'react-router-dom';
-
+import App from '../App';
 
 class Product extends Component {
   constructor(props) {
@@ -56,8 +56,13 @@ class Product extends Component {
       }
     );
   }
+  returnApp = (image, brand, name, price) => {
+    // console.log("implement returnApp");
+    this.props.callbackFromProducts({image, brand, name, price});
+  }
   render() {
     let image = this.props.image;
+    let brand = this.props.brand;
     let name = this.props.name;
     let price = this.props.price;
     let id = this.props.id;
@@ -79,18 +84,18 @@ class Product extends Component {
           </div>
 
           <Link to='/itemdetail'>
-            <h4 className="product-name">{this.props.name}</h4>
+            <h4 className="product-name" onClick={this.returnApp.bind(this, image, brand, name, price)}>{this.props.name}</h4>
           </Link>
 
           <p className="product-price">{this.props.price}</p>
           
-          <Counter
+          {/* <Counter
             productQuantity={quantity}
             updateQuantity={this.props.updateQuantity}
             resetQuantity={this.resetQuantity}
-          />
-
-          <div className="product-action">
+          /> */}
+          {/* <Route path='/itemdetail' component={ItemDetail}/> */}
+          {/* <div className="product-action">
               <button
                 className={!this.state.isAdded ? "" : "added"}
                 type="button"
@@ -104,8 +109,9 @@ class Product extends Component {
                 )}>
                 {!this.state.isAdded ? "ADD TO CART" : "✔ ADDED"}
               </button>
-          </div>
+          </div> */}
         </div>
+        
       </div>
     );
   }

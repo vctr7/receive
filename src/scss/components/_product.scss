@@ -2,6 +2,7 @@
   background: $white;
   margin: 0px;
   width: 200px;
+  height: 300;
   // border-radius: 2px;
   .product-image {
     overflow: hidden;
@@ -22,19 +23,35 @@
     }
   }
   .product-name {
+
+    // border: 1px solid black;
+    // width: 190;
+    overflow: hidden;
+    // white-space: nowrap;
+    text-overflow: ellipsis;
+    // height: 40;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: 1.2em;
+    height: 2.4em;
+
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 8px;
   }
   .product-price {
+    // margin-top:20;
+    // border: 1px solid black;
     font-size: 22px;
     font-weight: 700;
     line-height: 22px;
     margin-bottom: 16px;
-    &:before {
-      content: "₹ ";
-    }
+    // &:before {
+    //   content: "₹ ";
+    // }
   }
   .product-name,
   .product-price {

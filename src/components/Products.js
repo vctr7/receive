@@ -8,6 +8,12 @@ class Products extends Component {
   constructor() {
     super();
   }
+
+  productsCallback = (dataFromProduct) => {
+    // 자식 컴포넌트에서 받은 값을 이용한 로직 처리
+    this.props.callbackFromApp(dataFromProduct);
+  }
+
   render() {
     let productsData;
     let term = this.props.searchTerm;
@@ -23,6 +29,7 @@ class Products extends Component {
       .map(product => {
         return (
           <Product
+            callbackFromProducts={this.productsCallback}
             // key={product.id}
             // price={product.price}
             // name={product.name}
@@ -32,6 +39,7 @@ class Products extends Component {
             price={product.priceUSD}
             name={product.name}
             image={product.imgSrc}
+            brand={product.brandEng}
             id={product.prdNo}
 
             addToCart={this.props.addToCart}
