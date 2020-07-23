@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Advertisement from "./components/Advertisement"
 import Navigator from "./components/Navigator"
 import Products from "./components/Products";
-import Product from "./components/Product"
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
 import ItemDetail from "./page/ItemDetail";
