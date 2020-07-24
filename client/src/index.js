@@ -13,7 +13,6 @@ class Index extends React.Component{
       <BrowserRouter>
         <App/>
       </BrowserRouter>
-      
     )
   }
 }

@@ -19,7 +19,13 @@ module.exports = merge.smart(webpackCommon, {
     contentBase: path.join(__dirname, "docs"),
     host: "localhost",
     port: 8015,
-    publicPath: "/"
+    publicPath: "/",    
+    proxy:{
+      '/api/':{
+        target: "http://localhost:8795",
+        changeOrigin : true
+      }
+    }
   },
   devtool: "cheap-eval-source-map",
   plugins: [new webpack.HotModuleReplacementPlugin()]

@@ -15,7 +15,9 @@ class Products extends Component {
   }
 
   render() {
+    
     let productsData;
+    // console.log(this.props.productsList);
     let term = this.props.searchTerm;
     let x;
 
@@ -25,16 +27,10 @@ class Products extends Component {
       };
     }
     productsData = this.props.productsList
-      .filter(searchingFor(term))
       .map(product => {
         return (
           <Product
             callbackFromProducts={this.productsCallback}
-            // key={product.id}
-            // price={product.price}
-            // name={product.name}
-            // image={product.image}
-            // id={product.id}
             key={product.prdNo}
             price={product.priceUSD}
             name={product.name}
@@ -49,6 +45,27 @@ class Products extends Component {
           />
         );
       });
+
+    // productsData = this.props.productsList
+    //   .filter(searchingFor(term))
+    //   .map(product => {
+    //     return (
+    //       <Product
+    //         callbackFromProducts={this.productsCallback}
+    //         key={product.prdNo}
+    //         price={product.priceUSD}
+    //         name={product.name}
+    //         image={product.imgSrc}
+    //         brand={product.brandEng}
+    //         id={product.prdNo}
+
+    //         addToCart={this.props.addToCart}
+    //         productQuantity={this.props.productQuantity}
+    //         updateQuantity={this.props.updateQuantity}
+    //         openModal={this.props.openModal}
+    //       />
+    //     );
+    //   });
 
     // Empty and Loading States
     let view;

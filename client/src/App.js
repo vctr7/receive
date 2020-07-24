@@ -27,6 +27,7 @@ class App extends Component {
     super();
     this.state = {
       products: [],
+      temp: "",
       cart: [],
       totalItems: 0,
       totalAmount: 0,
@@ -39,7 +40,7 @@ class App extends Component {
       p_imgurl: "https://danielledeepsea.files.wordpress.com/2018/03/false-2061132_960_720.png",
       p_brand: "None",
       p_name: "None",
-      p_price: "0$"
+      p_price: "--$"
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleMobileSearch = this.handleMobileSearch.bind(this);
@@ -54,21 +55,30 @@ class App extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
   // Fetch Initial Set of Products from external API
-  getProducts() {
-    // let url =
-    //   "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
-    // axios.get(url).then(response => {
-    //   this.setState({
-    //     products: response.data
-    //   });
+  // getProducts() {
+  //   let url = "http://localhost:8795/api/parfum";
+  //     // "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
+  //   axios.get(url).then(response => {
+  //     this.setState({
+  //       products: response.data
+  //     });
+  //   });
+    // this.setState({
+    //   products: parfum
     // });
+  // }
+
+  callApi = async() => {
+    const response = await fetch("/api/parfum");
+    const body = await response.json();
     this.setState({
-      products: parfum
-        
-    });
+      temp: body
+    })
   }
-  componentWillMount() {
-    this.getProducts();
+
+  componentDidMount() {
+    // this.getProducts();
+    this.callApi();
   }
 
   // Search by Keyword
@@ -179,7 +189,7 @@ class App extends Component {
       p_imgurl: dataFromProducts["image"],
       p_brand: dataFromProducts["brand"],
       p_name: dataFromProducts["name"],
-      p_price:dataFromProducts["price"]
+      p_price: dataFromProducts["price"]
     })
   }
 
@@ -207,7 +217,15 @@ class App extends Component {
             <Advertisement className="AD"/>
             <hr/>
                 <h3>Hot</h3>
-                <Products
+                {this.state.temp ? <Products
+                callbackFromApp={this.appCallback}
+                productsList={this.state.temp}
+                searchTerm={this.state.term}
+                addToCart={this.handleAddToCart}
+                productQuantity={this.state.quantity}
+                updateQuantity={this.updateQuantity}
+                openModal={this.openModal}/> : "not"}
+                {/* {this.state.products ? <Products
                 callbackFromApp={this.appCallback}
                 productsList={this.state.products}
                 searchTerm={this.state.term}
@@ -215,7 +233,16 @@ class App extends Component {
                 productQuantity={this.state.quantity}
                 updateQuantity={this.updateQuantity}
                 openModal={this.openModal}
-                />
+                /> :"hello"} */}
+                {/* <Products
+                callbackFromApp={this.appCallback}
+                productsList={this.state.products}
+                searchTerm={this.state.term}
+                addToCart={this.handleAddToCart}
+                productQuantity={this.state.quantity}
+                updateQuantity={this.updateQuantity}
+                openModal={this.openModal}
+                /> */}
 
           </Route>
           <Route path='/itemdetail'>

@@ -56,10 +56,11 @@ class Product extends Component {
       }
     );
   }
+  
   returnApp = (image, brand, name, price) => {
-    // console.log("implement returnApp");
     this.props.callbackFromProducts({image, brand, name, price});
   }
+
   render() {
     let image = this.props.image;
     let brand = this.props.brand;
