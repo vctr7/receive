@@ -1,22 +1,38 @@
+const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 8795;
 
+const rjson = require('./parfum.json');
 
-const data = require('./parfum.json');
+const data = fs.readFileSync('./database.json');
+const conf = JSON.parse(data);
+const mysql = require('mysql2');
 
-// app.use(cors);
+const connection = mysql.createConnection({
+    host: conf.host,
+    user: conf.user,
+    password: conf.password,
+    port: conf.port,
+    database: conf.database
+});
+connection.connect();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+                                                                                    
+// app.get('/api/parfum', (req, res) => {
+//     res.json(rjson);
+// });
 
-
-// app.get('/api/hello', (req, res) => {
-//     res.send({message: 'Hello Express!'});
-// }); 
 app.get('/api/parfum', (req, res) => {
-    res.json(data);
+    connection.query(
+        "SELECT * FROM parfum LIMIT 40",
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    );
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

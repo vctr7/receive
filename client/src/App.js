@@ -26,8 +26,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      products: [],
-      temp: "",
+      db: "",
+      products: "",
       cart: [],
       totalItems: 0,
       totalAmount: 0,
@@ -72,8 +72,17 @@ class App extends Component {
     const response = await fetch("/api/parfum");
     const body = await response.json();
     this.setState({
-      temp: body
+      products: body
     })
+    // const rep = await fetch("/db");
+
+    // const b = await rep.json();
+    // console.log('success!');
+
+    // this.setState({
+    //   db: b
+    // })
+    
   }
 
   componentDidMount() {
@@ -216,33 +225,17 @@ class App extends Component {
             </div>
             <Advertisement className="AD"/>
             <hr/>
+            {this.state.db ? this.state.db : "db err"}
+
                 <h3>Hot</h3>
-                {this.state.temp ? <Products
-                callbackFromApp={this.appCallback}
-                productsList={this.state.temp}
-                searchTerm={this.state.term}
-                addToCart={this.handleAddToCart}
-                productQuantity={this.state.quantity}
-                updateQuantity={this.updateQuantity}
-                openModal={this.openModal}/> : "not"}
-                {/* {this.state.products ? <Products
+                {this.state.products ? <Products
                 callbackFromApp={this.appCallback}
                 productsList={this.state.products}
                 searchTerm={this.state.term}
                 addToCart={this.handleAddToCart}
                 productQuantity={this.state.quantity}
                 updateQuantity={this.updateQuantity}
-                openModal={this.openModal}
-                /> :"hello"} */}
-                {/* <Products
-                callbackFromApp={this.appCallback}
-                productsList={this.state.products}
-                searchTerm={this.state.term}
-                addToCart={this.handleAddToCart}
-                productQuantity={this.state.quantity}
-                updateQuantity={this.updateQuantity}
-                openModal={this.openModal}
-                /> */}
+                openModal={this.openModal}/> : "Loading..."}
 
           </Route>
           <Route path='/itemdetail'>

@@ -1,3 +1,6 @@
+# Database
+/database.json
+
 # Stylesheets
 .sass-cache/
 *.css.map
