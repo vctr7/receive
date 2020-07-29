@@ -26,7 +26,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      db: "",
       products: "",
       cart: [],
       totalItems: 0,
@@ -74,15 +73,6 @@ class App extends Component {
     this.setState({
       products: body
     })
-    // const rep = await fetch("/db");
-
-    // const b = await rep.json();
-    // console.log('success!');
-
-    // this.setState({
-    //   db: b
-    // })
-    
   }
 
   componentDidMount() {
@@ -225,8 +215,6 @@ class App extends Component {
             </div>
             <Advertisement className="AD"/>
             <hr/>
-            {this.state.db ? this.state.db : "db err"}
-
                 <h3>Hot</h3>
                 {this.state.products ? <Products
                 callbackFromApp={this.appCallback}

@@ -4,8 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 8795;
 
-const rjson = require('./parfum.json');
-
+// const rjson = require('./parfum.json');
 const data = fs.readFileSync('./database.json');
 const conf = JSON.parse(data);
 const mysql = require('mysql2');
@@ -20,15 +19,11 @@ const connection = mysql.createConnection({
 connection.connect();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-                                                                                    
-// app.get('/api/parfum', (req, res) => {
-//     res.json(rjson);
-// });
+app.use(bodyParser.urlencoded({extended:true}));                                                                  
 
 app.get('/api/parfum', (req, res) => {
     connection.query(
-        "SELECT * FROM parfum LIMIT 40",
+        "SELECT * FROM parfum WHERE imgSrc IS NOT NULL LIMIT 200",
         (err, rows, fields) => {
             res.send(rows);
         }
