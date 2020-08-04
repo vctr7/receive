@@ -1,32 +1,17 @@
 {
-    "name": "receive",
-    "version": "1.0.0",
-    "scripts": {
-        "client": "cd client && yarn start",
-        "server": "nodemon server.js",
-        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
-    },
-    "dependencies": {
-        "axios": "^0.19.2",
-        "bcrypt": "^5.0.0",
-        "body-parser": "^1.19.0",
-        "cors": "^2.8.5",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "http-proxy-middleware": "^1.0.5",
-        "joi": "^17.1.1",
-        "jsonwebtoken": "^8.5.1",
-        "koa": "^2.13.0",
-        "koa-body": "^4.2.0",
-        "koa-bodyparser": "^4.3.0",
-        "koa-router": "^9.1.0",
-        "mongoose": "^5.9.27",
-        "mysql": "^2.18.1",
-        "mysql2": "^2.1.0",
-        "nodemon": "^2.0.4"
-    },
-    "devDependencies": {
-        "concurrently": "^5.2.0"
-    },
-    "license": "MIT"
+  "name": "proj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "cd server && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "repository": "https://github.com/vctr7/Receive.git",
+  "author": "PARK JEE HO <n2201121@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "defer-to-connect": "^2.0.0"
+  }
 }
