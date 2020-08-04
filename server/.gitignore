@@ -1,6 +1,6 @@
-# Database
+# Database & Privacy
 /database.json
-/.env
+.env
 
 # Stylesheets
 .sass-cache/
