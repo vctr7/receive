@@ -42,7 +42,7 @@ app.use(bodyParser());
 router.get('/api/parfum', ctx => {
     try {
       return new Promise(function(resolve, reject) {
-        connection.query("SELECT * FROM parfum WHERE imgSrc IS NOT NULL LIMIT 200", function (error, results, fields){
+        connectionToMysql.query("SELECT * FROM parfum WHERE imgSrc IS NOT NULL LIMIT 200", function (error, results, fields){
               ctx.body = results;
               resolve();
           })
