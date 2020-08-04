@@ -1,5 +1,6 @@
 # Database
 /database.json
+/.env
 
 # Stylesheets
 .sass-cache/
