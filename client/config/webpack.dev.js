@@ -21,7 +21,7 @@ module.exports = merge.smart(webpackCommon, {
     port: 8015,
     publicPath: "/",    
     proxy:{
-      '/api/':{
+      '/item/':{
         target: "http://localhost:8795",
         changeOrigin : true
       }

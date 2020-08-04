@@ -7,6 +7,7 @@ import Router from 'koa-router';
 import mysql from 'mysql2';
 import mongoose from 'mongoose';
 import api from './api';
+import jwtMiddleware from './lib/jwtMiddleware';
 
 const router = new Router();
 const app = new Koa();
@@ -39,7 +40,7 @@ mongoose
 app.use(bodyParser());
 
 //MySQL에서 상품목록 불러오기
-router.get('/api/parfum', ctx => {
+router.get('/item/parfum', ctx => {
     try {
       return new Promise(function(resolve, reject) {
         connectionToMysql.query("SELECT * FROM parfum WHERE imgSrc IS NOT NULL LIMIT 200", function (error, results, fields){
@@ -53,6 +54,9 @@ router.get('/api/parfum', ctx => {
     }
 })
 
+router.use('/api', api.routes());
+app.use(bodyParser());
+app.use(jwtMiddleware);
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

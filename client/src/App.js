@@ -14,8 +14,6 @@ import Login from "./page/Login";
 import MyPage from "./page/MyPage";
 import SignIn from "./page/SignIn";
 
-import parfum from "./components/parfum.json"
-
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
 import { data } from "autoprefixer";
@@ -68,7 +66,7 @@ class App extends Component {
   // }
 
   callApi = async() => {
-    const response = await fetch("/api/parfum");
+    const response = await fetch("/item/parfum");
     const body = await response.json();
     this.setState({
       products: body
