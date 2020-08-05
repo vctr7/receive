@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import {Route, Link} from 'react-router-dom';
-import axios from "axios";
+// import axios from "axios";
 import Header from "./components/Header";
 import Advertisement from "./components/Advertisement"
 import Navigator from "./components/Navigator"
 import Products from "./components/Products";
 import Footer from "./components/Footer";
 import QuickView from "./components/QuickView";
+
+//route to other pages
 import ItemDetail from "./page/ItemDetail";
 import DiscountInfo from "./page/DiscountInfo";
 import Login from "./page/Login";
@@ -17,7 +19,6 @@ import SignIn from "./page/SignIn";
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
 import { data } from "autoprefixer";
-
 
 
 class App extends Component {
@@ -51,19 +52,6 @@ class App extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-  // Fetch Initial Set of Products from external API
-  // getProducts() {
-  //   let url = "http://localhost:8795/api/parfum";
-  //     // "https://res.cloudinary.com/sivadass/raw/upload/v1535817394/json/products.json";
-  //   axios.get(url).then(response => {
-  //     this.setState({
-  //       products: response.data
-  //     });
-  //   });
-    // this.setState({
-    //   products: parfum
-    // });
-  // }
 
   callApi = async() => {
     const response = await fetch("/item/parfum");
@@ -74,7 +62,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.getProducts();
     this.callApi();
   }
 
