@@ -1,7 +1,6 @@
 import React from 'react';
-import Button from '../components/common/Button';
 import AuthTemplate from '../components/auth/AuthTemplate';
-import AuthForm from '../components/auth/AuthForm';
+import RegisterForm from '../containers/auth/RegisterForm';
 
 class Register extends React.Component{
     handleClick = () => {
@@ -11,7 +10,7 @@ class Register extends React.Component{
     render(){
         return(
             <AuthTemplate>
-                <AuthForm type="register" />
+                <RegisterForm />
             </AuthTemplate>
         );
     };

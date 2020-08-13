@@ -226,7 +226,7 @@ class Header extends Component {
             </div>
 
             <div className="SignIn">
-              <Link to="signin">회원가입</Link>
+              <Link to="register">회원가입</Link>
             </div>
 
             <div className="MyPage">

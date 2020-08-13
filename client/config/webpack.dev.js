@@ -24,6 +24,10 @@ module.exports = merge.smart(webpackCommon, {
       '/item/':{
         target: "http://localhost:8795",
         changeOrigin : true
+      },
+      '/api/':{
+        target: "http://localhost:8795",
+        changeOrigin : true
       }
     }
   },
