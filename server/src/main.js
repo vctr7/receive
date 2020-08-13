@@ -15,7 +15,7 @@ const app = new Koa();
 const {PORT, MONGO_URI} = process.env;
 const port = PORT || 8795;
 
-// MySQL 연동
+// MySQL 연동 3306
 const data = fs.readFileSync('./database.json');
 const conf = JSON.parse(data);
 const connectionToMysql = mysql.createConnection({

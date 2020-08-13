@@ -3,18 +3,18 @@ import Button from '../components/common/Button';
 import AuthTemplate from '../components/auth/AuthTemplate';
 import AuthForm from '../components/auth/AuthForm';
 
-class Login extends React.Component{
+class Register extends React.Component{
     handleClick = () => {
-        console.log("login");
+        console.log("register");
     }
 
     render(){
         return(
             <AuthTemplate>
-                <AuthForm type="login" />
+                <AuthForm type="register" />
             </AuthTemplate>
         );
     };
 };
 
-export default Login;
+export default Register;

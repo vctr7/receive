@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import {Route, Link} from 'react-router-dom';
 // import axios from "axios";
+
+// 환율 컴포넌트 추가하기
 import Header from "./components/Header";
 import Advertisement from "./components/Advertisement"
 import Navigator from "./components/Navigator"
@@ -14,7 +16,7 @@ import ItemDetail from "./page/ItemDetail";
 import DiscountInfo from "./page/DiscountInfo";
 import Login from "./page/Login";
 import MyPage from "./page/MyPage";
-import SignIn from "./page/SignIn";
+import Register from "./page/Register";
 
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
@@ -220,7 +222,7 @@ class App extends Component {
             />
           </Route>
           <Route path="/discount_info" component={DiscountInfo}/>
-          <Route path="/signin" component={SignIn}/>
+          <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
           <Route path="/mypage" component={MyPage}/>
         </div>
