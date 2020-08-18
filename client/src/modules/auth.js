@@ -15,14 +15,6 @@ const [LOGIN, LOGIN_SUCESS, LOGIN_FAILURE] = createRequestActionTypes(
     'auth/LOGIN',
 );
 
-// const REGISTER = 'auth/REGISTER';
-// const REGISTER_SUCCESS = 'auth/REGISTER_SUCCESS';
-// const REGISTER_FAILURE = 'auth/REGISTER_FAILURE';
-
-// const LOGIN = 'auth/LOGIN';
-// const LOGIN_SUCESS = 'auth/LOGIN_SUCESS';
-// const LOGIN_FAILURE = 'auth/LOGIN_FAILURE';
-
 export const changeField = createAction(
     CHANGE_FIELD,
     ({ form, key, value }) => ({
@@ -78,7 +70,7 @@ const auth = handleActions(
             [form]: initialState[form],
             authError: null,
         }),
-        
+
         // Register Success 
         [REGISTER_SUCCESS]: (state, { payload: auth }) => ({
             ...state,

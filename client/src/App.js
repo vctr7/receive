@@ -5,6 +5,7 @@ import {Route, Link} from 'react-router-dom';
 
 // 환율 컴포넌트 추가하기
 import Header from "./components/Header";
+import HeaderContainer from "./containers/common/HeaderContainer";
 import Advertisement from "./components/Advertisement"
 import Navigator from "./components/Navigator"
 import Products from "./components/Products";
@@ -21,6 +22,7 @@ import Register from "./page/Register";
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
 import { data } from "autoprefixer";
+import HeadeerContainer from "./containers/common/HeaderContainer";
 
 
 class App extends Component {
@@ -182,7 +184,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header
+        {/* <Header
           cartBounce={this.state.cartBounce}
           total={this.state.totalAmount}
           totalItems={this.state.totalItems}
@@ -194,7 +196,8 @@ class App extends Component {
           categoryTerm={this.state.category}
           updateQuantity={this.updateQuantity}
           productQuantity={this.state.moq}
-        />
+        /> */}
+        <HeaderContainer/>
         <div>
           <Route path="/" exact>
             <div className="mainpage_nav">
