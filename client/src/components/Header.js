@@ -44,7 +44,7 @@ const UserInfo = styled.div`
 `;
 
 
-const Header = ({ user }) => {
+const Header = ({ user, onLogout }) => {
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -159,7 +159,7 @@ const Header = ({ user }) => {
             {user ? (
               <div className='right'>
                 <UserInfo>{user.username}</UserInfo>
-                <Button>로그아웃</Button>
+                <Button onClick={onLogout}>로그아웃</Button>
                 <Button to="/register">회원가입</Button>
                 <Button to="/mypage">MyPage</Button>
               </div>
