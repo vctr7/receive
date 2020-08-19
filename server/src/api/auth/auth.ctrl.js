@@ -28,7 +28,6 @@ export const register = async ctx => {
     }
 
     const { userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber } = ctx.request.body;
-    // const { userId, password } = ctx.request.body;
 
     try{
         const exists = await User.findByUserId(userId);
