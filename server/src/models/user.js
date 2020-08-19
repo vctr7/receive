@@ -6,8 +6,33 @@ import jwt from 'jsonwebtoken';
 // const salt = bcrypt.genSaltSync(saltRound);
 
 const UserSchema = new Schema({
+    userId: String,
     username: String,
     hashedPassword: String,
+    birthday: Date,
+    emailAddress: String,
+    homeAddress: String,
+    phoneNumber: String,
+    cellphoneNumber: String,
+    duty: {
+        SILLA: {
+            id: String,
+            password: String,
+        },
+        LOTTE: {
+            id: String,
+            password: String,
+        },
+        SHINSEGAE: {
+            id: String,
+            password: String,
+        },
+    },
+
+    createdDate: {
+        type: Date,
+        default: Date.now,
+    }
 });
 
 UserSchema.methods.setPassword = async function(password){
@@ -21,8 +46,8 @@ UserSchema.methods.checkPassword = async function(password){
     return result;
 };
 
-UserSchema.statics.findByUsername = function(username){
-    return this.findOne({username});
+UserSchema.statics.findByUserId = function(userId){
+    return this.findOne({userId});
 };
 
 UserSchema.methods.serialize = function() {
@@ -35,7 +60,7 @@ UserSchema.methods.generateToken = function(){
     const token = jwt.sign(
         {
             _id: this.id,
-            username: this.username,
+            userId: this.userId,
         },
         process.env.JWT_SECRET,
         {

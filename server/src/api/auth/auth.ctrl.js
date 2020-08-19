@@ -2,14 +2,24 @@ import Joi from 'joi';
 import User from '../../models/user';
 
 export const register = async ctx => {
+    
     const schema = Joi.object().keys({
-        username: Joi.string()
-            .alphanum()
+        userId: Joi.string()
             .min(3)
             .max(20)
             .required(),
         password: Joi.string().required(),
+        username: Joi.string()
+        .min(3)
+        .max(20)
+        .required(),
+        emailAddress: Joi.string().required(),
+        birthday: Joi.date().required(),
+        homeAddress: Joi.string().required(),
+        phoneNumber: Joi.string().required(),
+        cellphoneNumber: Joi.string().required(),
     });
+
     const result = schema.validate(ctx.request.body);
     if(result.error){
         ctx.status = 400;
@@ -17,17 +27,26 @@ export const register = async ctx => {
         return;
     }
 
-    const { username, password } = ctx.request.body;
+    const { userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber } = ctx.request.body;
+    // const { userId, password } = ctx.request.body;
+
     try{
-        const exists = await User.findByUsername(username);
+        const exists = await User.findByUserId(userId);
         if(exists){
             ctx.status = 409;
             return;
         }
 
         const user = new User({
+            userId,
             username,
+            emailAddress,
+            birthday,
+            homeAddress,
+            phoneNumber,
+            cellphoneNumber,
         });
+
 
         await user.setPassword(password);
         await user.save();
@@ -43,15 +62,15 @@ export const register = async ctx => {
 };
 
 export const login = async ctx => {
-    const { username, password } = ctx.request.body;
+    const { userId, password } = ctx.request.body;
 
-    if (!username || !password) {
+    if (!userId || !password) {
         ctx.status = 401;
         return;
     }
 
     try {
-        const user = await User.findByUsername(username);
+        const user = await User.findByUserId(userId);
         if(!user){
             ctx.status = 401;
             return;

@@ -158,7 +158,7 @@ const Header = ({ user, onLogout }) => {
 
             {user ? (
               <div className='right'>
-                <UserInfo>{user.username}</UserInfo>
+                <UserInfo>{user.userId}님</UserInfo>
                 <Button onClick={onLogout}>로그아웃</Button>
                 <Button to="/register">회원가입</Button>
                 <Button to="/mypage">MyPage</Button>

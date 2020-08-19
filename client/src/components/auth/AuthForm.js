@@ -64,11 +64,11 @@ const AuthForm = ({type, form, onChange, onSubmit, error}) => {
             <h3>{text}</h3>
             <form onSubmit={onSubmit}>
                 <StyledInput 
-                    autoComplete="username" 
-                    name="username" 
+                    autoComplete="userId" 
+                    name="userId" 
                     placeholder="아이디" 
                     onChange={onChange}
-                    value={form.username}
+                    value={form.userId}
                 />
                 <StyledInput 
                     autoComplete="new-password" 
@@ -79,14 +79,64 @@ const AuthForm = ({type, form, onChange, onSubmit, error}) => {
                     value={form.password}
                 />
                 {type === 'register' && (
-                    <StyledInput 
-                        autoComplete="new-password" 
-                        name="passwordConfirm" 
-                        placeholder="비밀번호 확인" 
-                        type="password" 
-                        onChange={onChange}
-                        value={form.passwordConfirm}
-                     />
+                    <div>
+                        <StyledInput 
+                            autoComplete="new-password" 
+                            name="passwordConfirm" 
+                            placeholder="비밀번호 확인" 
+                            type="password" 
+                            onChange={onChange}
+                            value={form.passwordConfirm}
+                        />
+                        <StyledInput 
+                            autoComplete="username" 
+                            name="username" 
+                            placeholder="이름" 
+                            type="username" 
+                            onChange={onChange}
+                            value={form.username}
+                        />
+                        <StyledInput 
+                            autoComplete="emailAddress" 
+                            name="emailAddress" 
+                            placeholder="이메일" 
+                            type="emailAddress" 
+                            onChange={onChange}
+                            value={form.emailAddress}
+                        />
+                        <StyledInput 
+                            autoComplete="birthday" 
+                            name="birthday" 
+                            placeholder="생년월일" 
+                            type="birthday" 
+                            onChange={onChange}
+                            value={form.birthday}
+                        />
+                        <StyledInput 
+                            autoComplete="homeAddress" 
+                            name="homeAddress" 
+                            placeholder="주소" 
+                            type="homeAddress" 
+                            onChange={onChange}
+                            value={form.homeAddress}
+                        />
+                        <StyledInput 
+                            autoComplete="phoneNumber" 
+                            name="phoneNumber" 
+                            placeholder="전화번호" 
+                            type="phoneNumber" 
+                            onChange={onChange}
+                            value={form.phoneNumber}
+                        />
+                        <StyledInput 
+                            autoComplete="cellphoneNumber" 
+                            name="cellphoneNumber" 
+                            placeholder="핸드폰 번호" 
+                            type="cellphoneNumber" 
+                            onChange={onChange}
+                            value={form.cellphoneNumber}
+                        />
+                     </div>
                 )}
                 {error && <ErrorMessage>{error}</ErrorMessage>}
                 <ButtonWithMarginTop cyan={true} fullWidth={true} >

@@ -28,9 +28,8 @@ const RegisterForm = ( { history }) => {
 
     const onSubmit = e => {
         e.preventDefault();
-        const { username, password, passwordConfirm } = form;
-
-        if ([username, password, passwordConfirm].includes('')) {
+        const { userId, password, passwordConfirm, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber } = form;
+        if ([userId, password, passwordConfirm, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber].includes('')) {
             setError('빈 칸을 모두 입력하세요.');
             return;
         }
@@ -42,7 +41,7 @@ const RegisterForm = ( { history }) => {
             changeField({ form: 'register', key: 'passwordConfirm', value: ''});
             return;
         }
-        dispatch(register({ username, password }));
+        dispatch(register({ userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber}));
     };
 
     //컴포넌트 처음 렌더링 시 form 초기화

@@ -26,13 +26,19 @@ export const changeField = createAction(
 
 export const initializeForm = createAction(INITIALIZE_FORM, form => form);
 
-export const register = createAction(REGISTER, ({ username, password }) => ({
-    username,
+export const register = createAction(REGISTER, ({ userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber}) => ({
+    userId,
     password,
+    username,
+    emailAddress,
+    birthday,
+    homeAddress,
+    phoneNumber,
+    cellphoneNumber,
 }));
 
-export const login = createAction(LOGIN, ({ username, password }) => ({
-    username,
+export const login = createAction(LOGIN, ({ userId, password }) => ({
+    userId,
     password,
 }));
 
@@ -45,13 +51,19 @@ export function* authSaga() {
 
 const initialState = {
     login:{
-        username: '',
+        userId: '',
         password: '',
     },
     register: {
-        username: '',
+        userId: '',
         password: '',
         passwordConfirm: '',
+        username: '',
+        emailAddress : '',
+        birthday : '',
+        homeAddress : '',
+        phoneNumber : '',
+        cellphoneNumber: '',
     },
     auth: null,
     authError: null,
