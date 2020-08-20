@@ -1,6 +1,44 @@
 import Joi from 'joi';
 import User from '../../models/user';
 
+
+export const update = async ctx => {
+    const schema = Joi.object().keys({
+        userId: Joi.string().required(),
+        SHILLA: Joi.array(),
+        LOTTE: Joi.array(),
+        SHINSEGAE: Joi.array(),  
+    });
+    
+    const result = schema.validate(ctx.request.body);
+    if(result.error){
+        ctx.status = 400;
+        ctx.body = result.error;
+        return;
+    }
+    const { userId, SHILLA, LOTTE, SHINSEGAE } = ctx.request.body;
+    try {
+        const user = await User.findByUserId(userId);
+        if(!user){
+            ctx.status = 401;
+            return;
+        }
+        await user.setDuty(SHILLA, LOTTE, SHINSEGAE);
+        await user.save();
+        ctx.body = user.serialize();
+
+        const token = user.generateToken();
+        ctx.cookies.set('access_token', token, {
+            maxAge: 1000 * 60* 60 * 24 * 7,
+            httpOnly: true,
+        });
+
+
+    } catch (e){
+        throw(500, e);
+    }
+}
+
 export const register = async ctx => {
     
     const schema = Joi.object().keys({
@@ -45,7 +83,6 @@ export const register = async ctx => {
             phoneNumber,
             cellphoneNumber,
         });
-
 
         await user.setPassword(password);
         await user.save();

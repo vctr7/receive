@@ -5,30 +5,49 @@ import jwt from 'jsonwebtoken';
 // const saltRound = 10;
 // const salt = bcrypt.genSaltSync(saltRound);
 
-const UserSchema = new Schema({
-    userId: String,
-    username: String,
-    hashedPassword: String,
-    birthday: Date,
-    emailAddress: String,
-    homeAddress: String,
-    phoneNumber: String,
-    cellphoneNumber: String,
-    duty: {
-        SILLA: {
-            id: String,
-            password: String,
-        },
-        LOTTE: {
-            id: String,
-            password: String,
-        },
-        SHINSEGAE: {
-            id: String,
-            password: String,
-        },
-    },
 
+const UserSchema = new Schema({
+    userId: { 
+        type:String, 
+        default: "",
+    },
+    username: {
+        type:String,
+    },
+    hashedPassword: String,
+    birthday: {
+        type:Date,
+    },
+    emailAddress: {
+        type: String,
+    },
+    homeAddress: {
+        type:String,
+    },
+    phoneNumber: {
+        type: String,
+    },
+    cellphoneNumber:  {
+        type: String,
+    },
+    SHILLA: [
+        { 
+            id: String,
+            password: String,
+        },
+    ],
+    LOTTE: [
+        { 
+            id: String,
+            password: String,
+        }
+    ],
+    SHINSEGAE: [
+        { 
+            id: String,
+            password: String,
+        }
+    ],
     createdDate: {
         type: Date,
         default: Date.now,
@@ -45,6 +64,12 @@ UserSchema.methods.checkPassword = async function(password){
     const result = await bcrypt.compare(password, this.hashedPassword);
     return result;
 };
+
+UserSchema.methods.setDuty = async function(silla, lotte, shinsegae){
+    this.SHILLA = silla;
+    this.LOTTE = lotte;
+    this.SHINSEGAE = shinsegae;
+}
 
 UserSchema.statics.findByUserId = function(userId){
     return this.findOne({userId});
