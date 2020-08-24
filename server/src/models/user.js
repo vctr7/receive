@@ -30,24 +30,12 @@ const UserSchema = new Schema({
     cellphoneNumber:  {
         type: String,
     },
-    SHILLA: [
-        { 
-            id: String,
-            password: String,
-        },
-    ],
-    LOTTE: [
-        { 
-            id: String,
-            password: String,
-        }
-    ],
-    SHINSEGAE: [
-        { 
-            id: String,
-            password: String,
-        }
-    ],
+    SHILLA_id: String,
+    SHILLA_password: String,
+    LOTTE_id: String,
+    LOTTE_password: String,
+    SHINSEGAE_id: String,
+    SHINSEGAE_password: String,
     createdDate: {
         type: Date,
         default: Date.now,
@@ -65,10 +53,13 @@ UserSchema.methods.checkPassword = async function(password){
     return result;
 };
 
-UserSchema.methods.setDuty = async function(silla, lotte, shinsegae){
-    this.SHILLA = silla;
-    this.LOTTE = lotte;
-    this.SHINSEGAE = shinsegae;
+UserSchema.methods.setDuty = async function(SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password){
+    this.SHILLA_id = SHILLA_id;
+    this.SHILLA_password = SHILLA_password;
+    this.LOTTE_id = LOTTE_id;
+    this.LOTTE_password = LOTTE_password
+    this.SHINSEGAE_id = SHINSEGAE_id;
+    this.SHINSEGAE_password = SHINSEGAE_password;
 }
 
 UserSchema.statics.findByUserId = function(userId){

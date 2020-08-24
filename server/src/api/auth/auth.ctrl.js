@@ -5,9 +5,12 @@ import User from '../../models/user';
 export const update = async ctx => {
     const schema = Joi.object().keys({
         userId: Joi.string().required(),
-        SHILLA: Joi.array(),
-        LOTTE: Joi.array(),
-        SHINSEGAE: Joi.array(),  
+        SHILLA_id: Joi.string(),
+        SHILLA_password: Joi.string(),
+        LOTTE_id: Joi.string(),
+        LOTTE_password: Joi.string(),
+        SHINSEGAE_id: Joi.string(),
+        SHINSEGAE_password: Joi.string(),
     });
     
     const result = schema.validate(ctx.request.body);
@@ -16,24 +19,21 @@ export const update = async ctx => {
         ctx.body = result.error;
         return;
     }
-    const { userId, SHILLA, LOTTE, SHINSEGAE } = ctx.request.body;
+    const { userId, SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password } = ctx.request.body;
     try {
         const user = await User.findByUserId(userId);
         if(!user){
             ctx.status = 401;
             return;
         }
-        await user.setDuty(SHILLA, LOTTE, SHINSEGAE);
+        await user.setDuty(SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password);
         await user.save();
-        ctx.body = user.serialize();
-
+        ctx.body = user.toJSON();
         const token = user.generateToken();
         ctx.cookies.set('access_token', token, {
             maxAge: 1000 * 60* 60 * 24 * 7,
             httpOnly: true,
         });
-
-
     } catch (e){
         throw(500, e);
     }

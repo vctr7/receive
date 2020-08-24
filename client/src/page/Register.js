@@ -3,9 +3,6 @@ import AuthTemplate from '../components/auth/AuthTemplate';
 import RegisterForm from '../containers/auth/RegisterForm';
 
 class Register extends React.Component{
-    handleClick = () => {
-        console.log("register");
-    }
 
     render(){
         return(

@@ -4,7 +4,7 @@ import palette from '../../lib/styles/palette';
 import { Link } from 'react-router-dom';
 
 const AuthTemplateBlock = styled.div`
-    position: absolute;
+    // position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
@@ -38,7 +38,7 @@ const AuthTemplate = ({children}) => {
         <AuthTemplateBlock>
             <WhiteBox>
                 <div className="logo-area">
-                    <Link to="/">SPREE</Link>
+                    {/* <Link to="/">SPREE</Link> */}
                 </div>
                 {children}
             </WhiteBox>

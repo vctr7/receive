@@ -11,7 +11,7 @@ const [REGISTER, REGISTER_SUCCESS, REGISTER_FAILURE] = createRequestActionTypes(
     'auth/REGISTER',
 );
 
-const [LOGIN, LOGIN_SUCESS, LOGIN_FAILURE] = createRequestActionTypes(
+const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes(
     'auth/LOGIN',
 );
 
@@ -44,6 +44,7 @@ export const login = createAction(LOGIN, ({ userId, password }) => ({
 
 const registerSaga = createRequestSaga(REGISTER, authAPI.register);
 const loginSaga = createRequestSaga(LOGIN, authAPI.login);
+
 export function* authSaga() {
     yield takeLatest(REGISTER, registerSaga);
     yield takeLatest(LOGIN, loginSaga);
@@ -97,7 +98,7 @@ const auth = handleActions(
         }),
 
         // Login Success
-        [LOGIN_SUCESS]: (state, { payload: auth }) => ({
+        [LOGIN_SUCCESS]: (state, { payload: auth }) => ({
             ...state,
             authError: null,
             auth,
