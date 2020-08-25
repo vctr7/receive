@@ -106,7 +106,7 @@ const MypageForm = ({type, duty, onChange, onSubmit, error}) => {
             </form>
 
             <h4>롯데</h4>
-            { !duty.LOTTE_id && !duty.LOTTE_passsword ? (<form onSubmit={onSubmit}>
+            {/* { !duty.LOTTE_id && !duty.LOTTE_passsword ? (<form onSubmit={onSubmit}>
                 <StyledInput 
                     autoComplete="LOTTE_id" 
                     name="LOTTE_id" 
@@ -126,11 +126,31 @@ const MypageForm = ({type, duty, onChange, onSubmit, error}) => {
                 <ButtonWithMarginTop cyan={true} fullWidth={true} >
                     로그인
                 </ButtonWithMarginTop>
-            </form>) : (`success`)}
-            
+            </form>) : (`success`)} */}
+            <form onSubmit={onSubmit}>
+                <StyledInput 
+                    autoComplete="LOTTE_id" 
+                    name="LOTTE_id" 
+                    placeholder="아이디" 
+                    onChange={onChange}
+                    value={duty.LOTTE_id}
+                />
+                <StyledInput 
+                    autoComplete="new-password" 
+                    name="LOTTE_password" 
+                    placeholder="비밀번호" 
+                    type="password" 
+                    onChange={onChange}
+                    value={duty.LOTTE_password}
+                />
+                {error && <ErrorMessage>{error}</ErrorMessage>}
+                <ButtonWithMarginTop cyan={true} fullWidth={true} >
+                    로그인
+                </ButtonWithMarginTop>
+            </form>
 
             <h4>신세계</h4>
-            { !duty.SHINSEGAE_id && !duty.SHINSEGAE_passsword ? (<form onSubmit={onSubmit}>
+            {/* { !duty.SHINSEGAE_id && !duty.SHINSEGAE_passsword ? (<form onSubmit={onSubmit}>
                 <StyledInput 
                     autoComplete="SHINSEGAE_id" 
                     name="SHINSEGAE_id" 
@@ -150,7 +170,28 @@ const MypageForm = ({type, duty, onChange, onSubmit, error}) => {
                 <ButtonWithMarginTop cyan={true} fullWidth={true} >
                     로그인
                 </ButtonWithMarginTop>
-            </form>) : (`success`)}
+            </form>) : (`success`)} */}
+            <form onSubmit={onSubmit}>
+                <StyledInput 
+                    autoComplete="SHINSEGAE_id" 
+                    name="SHINSEGAE_id" 
+                    placeholder="아이디" 
+                    onChange={onChange}
+                    value={duty.SHINSEGAE_id}
+                />
+                <StyledInput 
+                    autoComplete="new-password" 
+                    name="SHINSEGAE_password"
+                    placeholder="비밀번호" 
+                    type="password" 
+                    onChange={onChange}
+                    value={duty.SHINSEGAE_password}
+                />
+                {error && <ErrorMessage>{error}</ErrorMessage>}
+                <ButtonWithMarginTop cyan={true} fullWidth={true} >
+                    로그인
+                </ButtonWithMarginTop>
+            </form>
 
         </AuthFormBlock>
     );

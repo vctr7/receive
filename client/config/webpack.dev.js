@@ -25,10 +25,10 @@ module.exports = merge.smart(webpackCommon, {
         target: "http://localhost:8795",
         changeOrigin : true
       },
-      '/api/':{
+      '/api/*':{
         target: "http://localhost:8795",
         changeOrigin : true
-      }
+      },
     }
   },
   devtool: "cheap-eval-source-map",

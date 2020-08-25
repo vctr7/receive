@@ -21,8 +21,6 @@ import Register from "./page/Register";
 
 import 'react-slideshow-image/dist/styles.css'
 import "./scss/style.scss";
-import { data } from "autoprefixer";
-import HeadeerContainer from "./containers/common/HeaderContainer";
 
 
 class App extends Component {

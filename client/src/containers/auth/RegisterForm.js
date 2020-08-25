@@ -12,7 +12,7 @@ const RegisterForm = ( { history }) => {
         form: auth.register,
         auth: auth.auth,
         authError: auth.authError,
-        user: user.user
+        user: user
     }));
 
     const onChange = e => {
@@ -41,7 +41,7 @@ const RegisterForm = ( { history }) => {
             changeField({ form: 'register', key: 'passwordConfirm', value: ''});
             return;
         }
-        dispatch(register({ userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber}));
+        dispatch(register({ userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber }));
     };
 
     //컴포넌트 처음 렌더링 시 form 초기화
@@ -62,14 +62,14 @@ const RegisterForm = ( { history }) => {
         }
         if (auth){
             console.log('회원가입 성공');
-            console.log('auth');
+            // console.log('auth');
             dispatch(check());
         }
     }, [auth, authError, dispatch]);
 
     // user 값이 잘 설정되었는지 확인
     useEffect(() => {
-        if (user) {
+        if (user.user) {
             history.push('/');
             try {
                 localStorage.setItem('user', JSON.stringify(user));
@@ -78,7 +78,6 @@ const RegisterForm = ( { history }) => {
             }
         }
     }, [history, user]);
-
 
     return (
         <AuthForm

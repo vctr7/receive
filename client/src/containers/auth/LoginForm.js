@@ -12,7 +12,7 @@ const LoginForm = ( { history } ) => {
         form: auth.login,
         auth: auth.auth,
         authError: auth.authError,
-        user: user.user
+        user: user
     }));
 
     const onChange = e => {
@@ -50,7 +50,7 @@ const LoginForm = ( { history } ) => {
     }, [auth, authError, dispatch]);
 
     useEffect(() => {
-        if (user) {
+        if (user.user) {
             history.push('/');
             try {
                 localStorage.setItem('user', JSON.stringify(user));

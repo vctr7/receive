@@ -132,11 +132,13 @@ export const login = async ctx => {
 
 export const check = async ctx => {
     const { user } = ctx.state;
+    // console.log(ctx.state);
     if(!user){
         ctx.status = 401;
         return;
     }
-    ctx.body = user;
+    const userinfo = await User.findByUserId(user.userId);
+    ctx.body = userinfo;
 };
 
 export const logout = async ctx => {

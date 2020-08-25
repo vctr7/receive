@@ -6,33 +6,25 @@ import produce from 'immer';
 
 
 const TEMP_SET_USER = 'user/TEMP_SET_USER';
-
 const [CHECK, CHECK_SUCCESS, CHECK_FAILURE] = createRequestActionTypes(
     'user/CHECK',
 );
 const [UPDATE, UPDATE_SUCCESS, UPDATE_FAILURE] = createRequestActionTypes(
-    'user/CHECK',
+    'user/UPDATE',
 );
-
 const CHANGE_FIELD = 'user/CHANGE_FIELD';
-
 const LOGOUT = 'user/LOGOUT';
 
-export const tempSetUser = createAction(TEMP_SET_USER, user => user);
+export const tempSetUser = createAction(TEMP_SET_USER, (user)  => (user));
 export const check = createAction(CHECK);
-export const update = createAction(UPDATE, ({ 
+export const update = createAction(UPDATE, ({ userId, SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password }) => ({ 
+    userId,
     SHILLA_id,
     SHILLA_password,
     LOTTE_id,
     LOTTE_password,
     SHINSEGAE_id,
-    SHINSEGAE_password  }) => ({
-        SHILLA_id,
-        SHILLA_password,
-        LOTTE_id,
-        LOTTE_password,
-        SHINSEGAE_id,
-        SHINSEGAE_password 
+    SHINSEGAE_password 
 }));
 export const logout = createAction(LOGOUT);
 export const changeField = createAction(
@@ -53,7 +45,7 @@ function checkFailureSaga() {
         console.log('localStrorage is not working..');
     }
 };
-
+const updateSaga = createRequestSaga(UPDATE, authAPI.update);
 function* logoutSaga(){
     try{
         yield call(authAPI.logout); //Call logout API
@@ -63,23 +55,18 @@ function* logoutSaga(){
     }
 };
 
-const updateSaga = createRequestSaga(UPDATE, authAPI.update);
-
 
 export function* userSaga() {
     yield takeLatest(CHECK, checkSaga);
     yield takeLatest(CHECK_FAILURE, checkFailureSaga);
     yield takeLatest(LOGOUT, logoutSaga);
-}
-
-export function* upSaga(){
     yield takeLatest(UPDATE, updateSaga);
 }
 
 const initialState = {
     user: null,
     checkError: null,
-    duty:{
+    duty: {
         SHILLA_id: '',
         SHILLA_password: '',
         LOTTE_id: '',
@@ -88,6 +75,7 @@ const initialState = {
         SHINSEGAE_password: '',
     },
     userInfo: null,
+    usererror: null,
 };
 
 export default handleActions(
@@ -97,14 +85,16 @@ export default handleActions(
                 draft[form][key] = value;
         }),
         // Update Success 
-        [UPDATE_SUCCESS]: (state, { payload: user }) => ({
+        [UPDATE_SUCCESS]: (state, { payload: userInfo }) => ({
             ...state,
-            user
+            userInfo,
+            usererror: null
         }),
         // Update Fail
         [UPDATE_FAILURE]: (state, { payload: error }) => ({
             ...state,
-            user
+            userInfo: null,
+            usererror: error
         }),
         [TEMP_SET_USER]: (state, { payload: user }) => ({
             ...state,

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../components/Header';
 import { logout } from '../../modules/user';
 
-const HeadeerContainer = () => {
+const HeaderContainer = () => {
     const { user } = useSelector(({user}) => ({user: user.user}));
     const dispatch = useDispatch();
     const onLogout = () => {
@@ -13,4 +13,4 @@ const HeadeerContainer = () => {
 
 };
 
-export default HeadeerContainer;
+export default HeaderContainer;
