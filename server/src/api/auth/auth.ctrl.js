@@ -2,15 +2,11 @@ import Joi from 'joi';
 import User from '../../models/user';
 
 
-export const update = async ctx => {
+export const updateSHILLA = async ctx => {
     const schema = Joi.object().keys({
         userId: Joi.string().required(),
         SHILLA_id: Joi.string(),
         SHILLA_password: Joi.string(),
-        LOTTE_id: Joi.string(),
-        LOTTE_password: Joi.string(),
-        SHINSEGAE_id: Joi.string(),
-        SHINSEGAE_password: Joi.string(),
     });
     
     const result = schema.validate(ctx.request.body);
@@ -19,14 +15,83 @@ export const update = async ctx => {
         ctx.body = result.error;
         return;
     }
-    const { userId, SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password } = ctx.request.body;
+    const { userId, SHILLA_id, SHILLA_password } = ctx.request.body;
+
     try {
         const user = await User.findByUserId(userId);
         if(!user){
             ctx.status = 401;
             return;
         }
-        await user.setDuty(SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password);
+        await user.setDutySHILLA(SHILLA_id, SHILLA_password);
+        await user.save();
+        ctx.body = user.toJSON();
+        const token = user.generateToken();
+        ctx.cookies.set('access_token', token, {
+            maxAge: 1000 * 60* 60 * 24 * 7,
+            httpOnly: true,
+        });
+    } catch (e){
+        throw(500, e);
+    }
+}
+
+export const updateLOTTE = async ctx => {
+    const schema = Joi.object().keys({
+        userId: Joi.string().required(),
+        LOTTE_id: Joi.string(),
+        LOTTE_password: Joi.string(),
+    });
+
+    const result = schema.validate(ctx.request.body);
+    if(result.error){
+        ctx.status = 400;
+        ctx.body = result.error;
+        return;
+    }
+    const { userId, LOTTE_id, LOTTE_password } = ctx.request.body;
+
+    try {
+        const user = await User.findByUserId(userId);
+        if(!user){
+            ctx.status = 401;
+            return;
+        }
+        await user.setDutyLOTTE(LOTTE_id, LOTTE_password);
+        await user.save();
+        ctx.body = user.toJSON();
+        const token = user.generateToken();
+        ctx.cookies.set('access_token', token, {
+            maxAge: 1000 * 60* 60 * 24 * 7,
+            httpOnly: true,
+        });
+    } catch (e){
+        throw(500, e);
+    }
+}
+
+export const updateSHINSEGAE = async ctx => {
+    const schema = Joi.object().keys({
+        userId: Joi.string().required(),
+        SHINSEGAE_id: Joi.string(),
+        SHINSEGAE_password: Joi.string(),
+    });
+
+    const result = schema.validate(ctx.request.body);
+    if(result.error){
+        ctx.status = 400;
+        ctx.body = result.error;
+        return;
+    }
+    const { userId, SHINSEGAE_id, SHINSEGAE_password } = ctx.request.body;
+
+    try {
+        const user = await User.findByUserId(userId);
+        if(!user){
+            ctx.status = 401;
+            return;
+        }
+        await user.setDutySHINSEGAE(SHINSEGAE_id, SHINSEGAE_password);
         await user.save();
         ctx.body = user.toJSON();
         const token = user.generateToken();

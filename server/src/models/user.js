@@ -53,11 +53,17 @@ UserSchema.methods.checkPassword = async function(password){
     return result;
 };
 
-UserSchema.methods.setDuty = async function(SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password){
+UserSchema.methods.setDutySHILLA = async function(SHILLA_id, SHILLA_password){
     this.SHILLA_id = SHILLA_id;
     this.SHILLA_password = SHILLA_password;
+}
+
+UserSchema.methods.setDutyLOTTE = async function(LOTTE_id, LOTTE_password){
     this.LOTTE_id = LOTTE_id;
-    this.LOTTE_password = LOTTE_password
+    this.LOTTE_password = LOTTE_password;
+}
+
+UserSchema.methods.setDutySHINSEGAE = async function(SHINSEGAE_id, SHINSEGAE_password){
     this.SHINSEGAE_id = SHINSEGAE_id;
     this.SHINSEGAE_password = SHINSEGAE_password;
 }

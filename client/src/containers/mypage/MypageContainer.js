@@ -1,64 +1,80 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { changeField, update, check } from '../../modules/user';
-import MypageForm from '../../components/MypageForm';
+// import React, { useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { withRouter } from 'react-router-dom';
+// import { changeField, update, updateSHILLA, check } from '../../modules/user';
+// import MypageForm from '../../components/MypageForm';
+// import MypageSHILLAForm from '../../components/MypageSHILLAForm';
 
 
-const MypageContainer = ( { history } ) => {
-    const [error, setError] = useState(null);
-    const dispatch = useDispatch();
-    const { form, auth, authError, user, duty } = useSelector(({ auth, user }) => ({
-        authError: auth.authError,
-        user: user,
-        duty: user.duty
-    }));
 
-    const onChange = e => {
-        const { value, name } = e.target;
-        dispatch(
-            changeField({
-                form: 'duty',
-                key: name,
-                value,
-            })
-        );
-    };
+// const MypageContainer = ( { history } ) => {
+//     const [error, setError] = useState(null);
+//     const dispatch = useDispatch();
+//     const { form, auth, authError, user, duty } = useSelector(({ auth, user }) => ({
+//         authError: auth.authError,
+//         user: user,
+//         duty: user.duty
+//     }));
 
-    const onSubmit = e => {
-        e.preventDefault();
+//     const onChange = e => {
+//         const { value, name } = e.target;
+//         dispatch(
+//             changeField({
+//                 form: 'duty',
+//                 key: name,
+//                 value,
+//             })
+//         );
+//     };
 
-        try {
-            localStorage.removeItem('user');
-            localStorage.setItem('user', JSON.stringify(user));
-        } catch(e) {
-            console.log('localStroage is not working..');
-        }
-        const userId = user.user.userId;
-        const { SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password } = duty;
+//     const onSubmit = e => {
+//         e.preventDefault();
 
-        dispatch(update({ userId, SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password }));
-        dispatch(check());
-    };
+//         try {
+//             localStorage.removeItem('user');
+//             localStorage.setItem('user', JSON.stringify(user));
+//         } catch(e) {
+//             console.log('localStroage is not working..');
+//         }
+//         const userId = user.user.userId;
+//         const SHILLA_id = duty.SHILLA_id;
+//         const SHILLA_password = duty.SHILLA_password;
+//         // const { SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password } = duty;
 
+//         // dispatch(update({ userId, SHILLA_id, SHILLA_password, LOTTE_id, LOTTE_password, SHINSEGAE_id, SHINSEGAE_password }));
+//         dispatch(updateSHILLA({ userId, SHILLA_id, SHILLA_password }));
 
-    useEffect(() => {
-        if (!user.user) {
-            alert('로그인 필요');
-            history.push('/');
-        }
-    }, [history, user]);
+//         dispatch(check());
+//         dispatch(check());
+//     };
 
 
-    return(
-        <MypageForm 
-            type='mypage'
-            duty={duty} 
-            onChange={onChange} 
-            onSubmit={onSubmit} 
-            error={error}
-        />
-    );
-};
+//     useEffect(() => {
+//         if (!user.user) {
+//             alert('로그인 필요');
+//             history.push('/');
+//         }
+//     }, [history, user]);
 
-export default withRouter(MypageContainer);
+
+//     return(
+//         <div>
+//             <MypageSHILLA 
+//                 type='mypage'
+//                 duty={duty} 
+//                 onChange={onChange} 
+//                 onSubmit={onSubmit} 
+//                 error={error}
+//             />
+//             <MypageLOTTE
+//                 type='mypage'
+//                 duty={duty} 
+//                 onChange={onChange} 
+//                 onSubmit={onSubmit} 
+//                 error={error}
+//             />
+//         </div>
+//     );
+// };
+
+// export default withRouter(MypageContainer);
