@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.1",
+    "casper": "^0.1.1",
     "dotenv": "^8.2.0",
     "fstream": ">=1.0.12",
     "http-proxy-middleware": "^1.0.5",
@@ -26,6 +27,7 @@
     "minimist": ">=0.2.1",
     "mongoose": "^5.9.26",
     "prop-types": "^15.5.10",
+    "puppeteer": "^5.2.1",
     "react": "^16.0.0",
     "react-custom-scrollbars": "^4.1.1",
     "react-dom": "^16.0.0",

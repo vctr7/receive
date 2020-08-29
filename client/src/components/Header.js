@@ -155,12 +155,10 @@ const Header = ({ user, onLogout }) => {
             <Link to="/" className='logo'>
               SPREE
             </Link>
-
             {user ? (
               <div className='right'>
                 <UserInfo>{user.userId}님</UserInfo>
                 <Button onClick={onLogout}>로그아웃</Button>
-                <Button to="/register">회원가입</Button>
                 <Button to="/mypage">MyPage</Button>
               </div>
             ) : (
@@ -170,7 +168,6 @@ const Header = ({ user, onLogout }) => {
                 <Button to="/mypage">MyPage</Button>
             </div>
             )}
-            
           </Wrapper>
 
         </HeaderBlock>
