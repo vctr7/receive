@@ -24,7 +24,7 @@
     "kind-of": ">=6.0.3",
     "lodash.mergewith": ">=4.6.2",
     "mem": ">=4.0.0",
-    "minimist": ">=0.2.1",
+    "minimist": ">=1.2.3",
     "mongoose": "^5.9.26",
     "prop-types": "^15.5.10",
     "puppeteer": "^5.2.1",
