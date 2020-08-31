@@ -23,15 +23,5 @@ const puppeteer = require('puppeteer');
           
             await npage.click('.btns_com');
             
-            // console.log(page);
-
-            // if (target === 'https://kor.lottedfs.com/kr'){
-            //     console.log('login success')
-            // }
-            // else {
-            //     console.log('login error')
-            // }
-            // await browser.close();
-            
             
 })();
