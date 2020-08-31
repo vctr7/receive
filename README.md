@@ -25,7 +25,10 @@ yarn run build
 ## Detail
 
 ### Client
-  React, Redux
+<img src="https://hackernoon.com/hn-images/1*VeM-5lsAtrrJ4jXH96h5kg.png" width="200">
+
 
 ### Server
-  Node JS, MongoDB, MySQL
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" height="100">
+<img src="https://media.vlpt.us/images/hanblueblue/post/b18a8bbd-1589-4bef-9c20-d45bcb0bdf75/MongoDB-Logo.wine.png" height="100">
+<img src="https://media.vlpt.us/images/modolee/post/bfede970-614d-45ca-a9ff-00c9c9821569/MySQL-Logo.wine.png" height="100">
