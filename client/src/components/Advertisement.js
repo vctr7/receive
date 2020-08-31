@@ -1,12 +1,12 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
-// import './Advertisement.css'
 
+// Advertisement images
 const Images = [
   'https://react-slideshow.herokuapp.com/assets/images/slide_7.jpg',
   'https://react-slideshow.herokuapp.com/assets/images/slide_6.jpg',
   'https://react-slideshow.herokuapp.com/assets/images/slide_5.jpg',
-  'https://react-slideshow.herokuapp.com/assets/images/slide_4.jpg'
+  'https://react-slideshow.herokuapp.com/assets/images/slide_4.jpg',
 ];
 
 const properties = {

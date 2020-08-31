@@ -37,9 +37,10 @@ const MypageSHINSEGAE = ( { history } ) => {
         const userId = user.user.userId;
         const SHINSEGAE_id = duty.SHINSEGAE_id;
         const SHINSEGAE_password = duty.SHINSEGAE_password;
-
+        
+        // (Need to send the information to duty shopping web page)
+        
         dispatch(updateSHINSEGAE({ userId, SHINSEGAE_id, SHINSEGAE_password }));
-
         dispatch(check());
         dispatch(check());
     };

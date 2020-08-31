@@ -6,10 +6,9 @@ import MypageLOTTEForm from '../../components/MypageLOTTEForm';
 
 
 const MypageLOTTE = ( { history } ) => {
-    const [error, setError] = useState(null);
+    const [error] = useState(null);
     const dispatch = useDispatch();
-    const { form, auth, authError, user, duty } = useSelector(({ auth, user }) => ({
-        authError: auth.authError,
+    const { user, duty } = useSelector(({ user }) => ({
         user: user,
         duty: user.duty
     }));
@@ -38,8 +37,9 @@ const MypageLOTTE = ( { history } ) => {
         const LOTTE_id = duty.LOTTE_id;
         const LOTTE_password = duty.LOTTE_password;
 
-        dispatch(updateLOTTE({ userId, LOTTE_id, LOTTE_password }));
+        // (Need to send the information to duty shopping web page)
 
+        dispatch(updateLOTTE({ userId, LOTTE_id, LOTTE_password }));
         dispatch(check());
         dispatch(check());
     };

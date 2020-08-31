@@ -38,7 +38,7 @@ const MypageSHILLA = ( { history } ) => {
         const SHILLA_id = duty.SHILLA_id;
         const SHILLA_password = duty.SHILLA_password;
 
-        // 어떻게 로그인 ??
+        // (Need to send the information to duty shopping web page)
 
         dispatch(updateSHILLA({ userId, SHILLA_id, SHILLA_password }));
         dispatch(check());

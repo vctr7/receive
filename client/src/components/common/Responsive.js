@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Responsive form
 const ResponsiveBlock = styled.div`
     padding-left: 1rem;
     pdding-right: 1rem;

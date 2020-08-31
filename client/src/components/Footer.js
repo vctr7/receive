@@ -4,19 +4,13 @@ const Footer = props => {
   return (
     <footer>
       <p className="footer-links">
-        <a
-          href="https://github.com/vctr7/Recieve"
-          target="_blank"
-        >
-          View Source on Github
-        </a>
         <span> / </span>
         <a href="" target="_blank">
           Need any help?
         </a>
         <span> / </span>
         <a href="" target="_blank">
-          Say Hi on Twitter
+          Say Hi on SNS
         </a>
         <span> / </span>
         <a href="" target="_blank">
@@ -24,7 +18,7 @@ const Footer = props => {
         </a>
       </p>
       <p>
-        &copy; 2020 <strong>RECEIVE</strong> - Your Price
+        &copy; 2020 <strong>SPREE</strong> - PRICE COMPARISON
       </p>
     </footer>
   );

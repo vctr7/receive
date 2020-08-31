@@ -109,7 +109,6 @@ export default handleActions(
             userInfo,
             usererror: null
         }),
-        // Update Fail
         [UPDATESHILLA_FAILURE]: (state, { payload: error }) => ({
             ...state,
             userInfo: null,
@@ -120,7 +119,6 @@ export default handleActions(
             userInfo,
             usererror: null
         }),
-        // Update Fail
         [UPDATELOTTE_FAILURE]: (state, { payload: error }) => ({
             ...state,
             userInfo: null,
@@ -131,7 +129,6 @@ export default handleActions(
             userInfo,
             usererror: null
         }),
-        // Update Fail
         [UPDATESHINSEGAE_FAILURE]: (state, { payload: error }) => ({
             ...state,
             userInfo: null,

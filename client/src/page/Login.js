@@ -3,7 +3,6 @@ import AuthTemplate from '../components/auth/AuthTemplate';
 import LoginForm from '../containers/auth/LoginForm';
 
 class Login extends React.Component{
-
     render(){
         return(
             <AuthTemplate>

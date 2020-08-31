@@ -105,7 +105,6 @@ export const updateSHINSEGAE = async ctx => {
 }
 
 export const register = async ctx => {
-    
     const schema = Joi.object().keys({
         userId: Joi.string()
             .min(3)
@@ -197,7 +196,6 @@ export const login = async ctx => {
 
 export const check = async ctx => {
     const { user } = ctx.state;
-    // console.log(ctx.state);
     if(!user){
         ctx.status = 401;
         return;

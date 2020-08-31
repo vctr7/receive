@@ -30,8 +30,6 @@ class ItemDetail extends React.Component{
                 </div>
                 <div className="itemDetail">
                     <div className="itemDetail_item_info">
-                        {/* <h2>ITEM Info</h2> */}
-                        {/* <br/> */}
                         <br/>
                         <h5>{this.props.brand}</h5>
                         <h3>{this.props.name}</h3>
@@ -59,9 +57,7 @@ class ItemDetail extends React.Component{
                                     <li>신세계</li>
                                 </ul>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>

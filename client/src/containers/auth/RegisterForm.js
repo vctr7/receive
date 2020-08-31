@@ -34,7 +34,7 @@ const RegisterForm = ( { history }) => {
             return;
         }
 
-        //비밀번호 확인 틀릴 시
+        // If password is not matched
         if (password !== passwordConfirm){
             setError('비밀번호가 일치하지 않습니다.');
             changeField({ form: 'register', key: 'password', value: ''});
@@ -44,7 +44,7 @@ const RegisterForm = ( { history }) => {
         dispatch(register({ userId, password, username, emailAddress, birthday, homeAddress, phoneNumber, cellphoneNumber }));
     };
 
-    //컴포넌트 처음 렌더링 시 form 초기화
+    // 컴포넌트 처음 렌더링 시 form 초기화
     useEffect(() => {
         dispatch(initializeForm('register'));
     }, [dispatch]);
@@ -57,17 +57,16 @@ const RegisterForm = ( { history }) => {
                 return;
             }
             //기타 이유
-            setError('회원가입 실패');
+            setError('Register FAIL');
             return;
         }
         if (auth){
-            console.log('회원가입 성공');
-            // console.log('auth');
+            console.log('Register Success');
             dispatch(check());
         }
     }, [auth, authError, dispatch]);
 
-    // user 값이 잘 설정되었는지 확인
+    // Save user state
     useEffect(() => {
         if (user.user) {
             history.push('/');

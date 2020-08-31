@@ -29,18 +29,6 @@ const StyledInput = styled.input`
     }
 `;
 
-const Footer = styled.div`
-    margin-top: 2rem;
-    text-align: right;
-    a {
-        color: ${palette.gray[6]};
-        text-decoration: underline;
-        &:hover{
-            color: ${palette.gray[9]};
-        }
-    }
-`;
-
 const ButtonWithMarginTop = styled(Button)`
     margin-top: 1rem;
 `;

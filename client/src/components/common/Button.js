@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 
+// CSS of Button
 const StyledButton = styled.button`
     border: none;
     border-radius: 4px;
@@ -34,6 +35,7 @@ const StyledButton = styled.button`
             }
         `}
 `;
+
 
 const Button = ({ to, history, ...rest }) => {
     const onClick = e => {

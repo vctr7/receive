@@ -15,7 +15,7 @@ const app = new Koa();
 const {PORT, MONGO_URI} = process.env;
 const port = PORT || 8795;
 
-// MySQL 연동 3306
+// Connect to MySQL, PORT: 3306
 const data = fs.readFileSync('./database.json');
 const conf = JSON.parse(data);
 const connectionToMysql = mysql.createConnection({
@@ -27,7 +27,7 @@ const connectionToMysql = mysql.createConnection({
 });
 connectionToMysql.connect(console.log('Connected to MySQL'));
 
-// MongoDB 연동
+// Connect to MongoDB
 mongoose
 .connect(MONGO_URI, { useNewUrlParser: true, useFindAndModify:false, useUnifiedTopology: true})
     .then(() => {
@@ -39,11 +39,11 @@ mongoose
 
 app.use(bodyParser());
 
-//MySQL에서 상품목록 불러오기
+// Get item list from MySQL
 router.get('/item/parfum', ctx => {
     try {
       return new Promise(function(resolve, reject) {
-        connectionToMysql.query("SELECT * FROM parfum WHERE imgSrc IS NOT NULL LIMIT 200", function (error, results, fields){
+        connectionToMysql.query("SELECT * FROM parfum WHERE imgSrc IS NOT NULL LIMIT 50", function (error, results, fields){
               ctx.body = results;
               resolve();
           })

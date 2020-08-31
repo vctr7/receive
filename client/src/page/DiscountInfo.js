@@ -5,11 +5,6 @@ import Navigator from '../components/Navigator'
 class DiscountInfo extends React.Component{
     constructor(props){
         super(props);
-        // this.state = {
-        //     info1: 0,
-        //     info2: 0,
-        //     info3: 0
-        // };
     };
 
     static defaultProps = {
@@ -17,14 +12,6 @@ class DiscountInfo extends React.Component{
         info2: 2,
         info3: 3
     }
-
-    // componentDidMount(){
-    //     this.setState({
-    //         info1: this.state.info1 +1,
-    //         info2: this.state.info2 +2,
-    //         info3: this.state.info3 +3
-    //     });
-    // };
 
     render(){
         return(
