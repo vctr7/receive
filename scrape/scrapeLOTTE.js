@@ -6,8 +6,8 @@ const puppeteer = require('puppeteer');
             });
             const page = await browser.newPage();
           
-            const _id = "emdwjdgkrl";
-            const _pw = "Qkrwlgh11@!";
+            const _id = "";
+            const _pw = "";
           
             await page.goto('https://kor.lps.lottedfs.com/kr/member/login?_ga=2.204047571.2121755295.1598499801-630016701.1598499801');
           

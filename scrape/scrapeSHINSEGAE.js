@@ -6,8 +6,8 @@ const puppeteer = require('puppeteer');
             });
             const page = await browser.newPage();
           
-            const _id = "n2201121";
-            const _pw = "qkrwlgh11@!";
+            const _id = "";
+            const _pw = "";
           
             await page.goto('https://www.ssgdfm.com/shop/login/loginPopupForm?redirectUrl=http%3A//www.ssgdfm.com/shop/main');
             await page.evaluate((id, pw) => {
