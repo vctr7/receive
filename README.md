@@ -21,3 +21,11 @@ Project will be automatically open at http://localhost.com:8015
 ```
 yarn run build
 ``` -->
+
+## Detail
+
+### Client
+  React, Redux
+
+### Server
+  Node JS, MongoDB, MySQL
